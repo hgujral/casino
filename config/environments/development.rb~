@@ -36,7 +36,7 @@ Casino::Application.configure do
   config.assets.debug = true
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-  config.wash_out.namespace = 'urn:service.mohegansun.com'
+  config.wash_out.namespace = 'urn:com.mohegansun.service'
   # config.wash_out.camelize_wsdl = true
    
 end
