@@ -8,6 +8,7 @@ class CreatePatrons < ActiveRecord::Migration
       t.string :city
       t.string :state
       t.string :phone
+      t.integer :agent_id
 
       t.timestamps
     end

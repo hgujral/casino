@@ -14,6 +14,7 @@ namespace :db do
       person.city    = Faker::Address.city
       person.state   = Faker::Address.us_state_abbr
       person.phone   = Faker::PhoneNumber.phone_number
+      person.agent_id = [12345, 23456, 34567]
     end
   end
 end
