@@ -10,7 +10,7 @@ namespace :db do
       person.card_number = 300000..500000
       person.first_name = Faker::Name.first_name
       person.last_name = Faker::Name.last_name
-      person.dob = 50.years.ago..21.years.ago
+      person.dob = 65.years.ago..21.years.ago
       person.city    = Faker::Address.city
       person.state   = Faker::Address.us_state_abbr
       person.phone   = Faker::PhoneNumber.phone_number

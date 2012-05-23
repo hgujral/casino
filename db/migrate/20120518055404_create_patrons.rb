@@ -4,7 +4,7 @@ class CreatePatrons < ActiveRecord::Migration
       t.string :card_number
       t.string :first_name
       t.string :last_name
-      t.date :dob
+      t.datetime :dob
       t.string :city
       t.string :state
       t.string :phone

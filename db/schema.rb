@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(:version => 20120518055404) do
     t.string   "card_number"
     t.string   "first_name"
     t.string   "last_name"
-    t.date     "dob"
+    t.datetime "dob"
     t.string   "city"
     t.string   "state"
     t.string   "phone"

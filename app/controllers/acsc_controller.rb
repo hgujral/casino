@@ -8,7 +8,6 @@ class AcscController < ApplicationController
                 :card_number => :string,
                 :first_name => :string,
                 :last_name => :string,
-                :dob => :date,
                 :phone => :string
               },
               :return => {:playerResultList => 
@@ -17,7 +16,7 @@ class AcscController < ApplicationController
                     :card_number => :string,
                     :first_name => :string,
                     :last_name => :string,
-                    :dob => :date,
+                    :dob => :datetime,
                     :city => :string,
                     :state => :string,
                     :phone => :string,
