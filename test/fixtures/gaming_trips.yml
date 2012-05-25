@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  played_at: 
+  average_bet: 1
+  percent_table: 9.99
+  percent_slot: 9.99
+  total_points: 1
+  total_ng_comp: 1
+  adt: 1
+  adl: 1
+  wl_after_tax: 9.99
+  buy_in: 9.99
+  coin_in: 1
+  credit_action: 1
+
+two:
+  played_at: 
+  average_bet: 1
+  percent_table: 9.99
+  percent_slot: 9.99
+  total_points: 1
+  total_ng_comp: 1
+  adt: 1
+  adl: 1
+  wl_after_tax: 9.99
+  buy_in: 9.99
+  coin_in: 1
+  credit_action: 1

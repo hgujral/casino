@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyText
+  expired_at: 2012-05-24 14:53:54
+  agent_id: 1
+  visible_to: MyString
+
+two:
+  description: MyText
+  expired_at: 2012-05-24 14:53:54
+  agent_id: 1
+  visible_to: MyString
