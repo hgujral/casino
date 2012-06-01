@@ -103,4 +103,63 @@ class AcscController < ApplicationController
     patron = Patron.find_by_card_number(params[:card_number])
     render :soap => {:playerRemarksResultList => {:remark => patron.remarks}}
   end
+  
+  soap_action "queryPlayerGamingTripSummary",
+              :args   => {
+                :card_number => :string
+              },
+              :return => {:playerGamingTripSummary => 
+                {:gaming_trip_summary => 
+                  [{
+                    :id => :integer,
+                    :played_at => :dateTime,
+                    :average_bet => :integer,
+                    :percent_table => :decimal,
+                    :percent_slot => :decimal,
+                    :total_points => :integer,
+                    :total_ng_comp => :integer,
+                    :adt => :integer,
+                    :adl => :integer,
+                    :days_without_play => :integer,
+                    :wl_after_tax => :integer,
+                    :buy_in => :integer,
+                    :coin_in => :integer,
+                    :credit_action => :string                    
+                  }]
+                }
+              },
+	      :to => :queryPlayerGamingTripSummary 
+  def queryPlayerGamingTripSummary
+    patron = Patron.find_by_card_number(params[:card_number])
+    render :soap => {:playerGamingTripSummary => {:gaming_trip_summary => patron.gaming_trip_summary}}
+  end
+
+  soap_action "queryPlayerGamingTrip",
+              :args   => {
+                :gaming_trip_summary_id => :string
+              },
+              :return => {:playerGamingTrip => 
+                {:gaming_trip => 
+                  [{
+                    :played_at => :dateTime,
+                    :average_bet => :integer,
+                    :percent_table => :decimal,
+                    :percent_slot => :decimal,
+                    :total_points => :integer,
+                    :total_ng_comp => :integer,
+                    :adt => :integer,
+                    :adl => :integer,
+                    :wl_after_tax => :integer,
+                    :buy_in => :integer,
+                    :coin_in => :integer,
+                    :credit_action => :string                    
+                  }]
+                }
+              },
+	      :to => :queryPlayerGamingTrip 
+  def queryPlayerGamingTrip
+    gaming_trip_summary = GamingTripSummary.find(params[:gaming_trip_summary_id])
+    render :soap => {:playerGamingTrip => {:gaming_trip => gaming_trip_summary.gaming_trips}}
+  end
+  
 end

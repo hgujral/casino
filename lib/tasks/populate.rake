@@ -4,7 +4,7 @@ namespace :db do
     require 'populator'
     require 'faker'
     
-    [Patron].each(&:delete_all)
+    [Patron, Remark, GamingTripSummary, GamingTrip].each(&:delete_all)
     
     Patron.populate 5 do |person|
       person.card_number = 300000..500000
@@ -49,6 +49,39 @@ namespace :db do
         remark.expired_at = 2.months.from_now..4.months.from_now
         remark.agent_id = [12345, 23456, 34567]
         remark.visible_to = ['A', 'AL']
+      end
+      GamingTripSummary.populate 5..10 do |trip_summary|
+        trip_summary.played_at = 11.months.ago..2.months.ago
+        trip_summary.average_bet = 100..1000
+        trip_summary.percent_table = 1..100
+        trip_summary.percent_slot = 100 - trip_summary.percent_table
+        trip_summary.total_points = 1000..20000
+        trip_summary.total_ng_comp = 1000..2000
+        trip_summary.adt = 100..1000
+        trip_summary.adl = trip_summary.adt - 20
+        trip_summary.days_without_play = 3..10
+        trip_summary.wl_after_tax = -500..500
+        trip_summary.buy_in = 30..300
+        trip_summary.coin_in = 20..200
+        trip_summary.credit_action = ''
+        trip_summary.patron_id = person.id
+        d = trip_summary.played_at
+        GamingTrip.populate 2..5 do |trip|
+          trip.played_at = d
+          d += 1.day
+          trip.average_bet = 100..1000
+          trip.percent_table = 1..100
+          trip.percent_slot = 100 - trip.percent_table
+          trip.total_points = 1000..20000
+          trip.total_ng_comp = 1000..20000
+          trip.adt = 100..1000
+          trip.adl = trip.adt - 20
+          trip.wl_after_tax = -500..500
+          trip.buy_in = 30..300
+          trip.coin_in = 20..200
+          trip.credit_action = ''
+          trip.gaming_trip_summary_id = trip_summary.id
+        end
       end
     end
   end

@@ -1,7 +1,7 @@
 class CreateGamingTripSummaries < ActiveRecord::Migration
   def change
     create_table :gaming_trip_summaries do |t|
-      t.dateTime :played_at
+      t.datetime :played_at
       t.integer :average_bet
       t.decimal :percent_table
       t.decimal :percent_slot

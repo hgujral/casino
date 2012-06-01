@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120524185354) do
+ActiveRecord::Schema.define(:version => 20120525034728) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -45,6 +45,43 @@ ActiveRecord::Schema.define(:version => 20120524185354) do
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
+
+  create_table "gaming_trip_summaries", :force => true do |t|
+    t.datetime "played_at"
+    t.integer  "average_bet"
+    t.decimal  "percent_table"
+    t.decimal  "percent_slot"
+    t.integer  "total_points"
+    t.integer  "total_ng_comp"
+    t.integer  "adt"
+    t.integer  "adl"
+    t.integer  "days_without_play"
+    t.decimal  "wl_after_tax"
+    t.decimal  "buy_in"
+    t.integer  "coin_in"
+    t.integer  "credit_action"
+    t.integer  "patron_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "gaming_trips", :force => true do |t|
+    t.datetime "played_at"
+    t.integer  "average_bet"
+    t.decimal  "percent_table"
+    t.decimal  "percent_slot"
+    t.integer  "total_points"
+    t.integer  "total_ng_comp"
+    t.integer  "adt"
+    t.integer  "adl"
+    t.decimal  "wl_after_tax"
+    t.decimal  "buy_in"
+    t.integer  "coin_in"
+    t.integer  "credit_action"
+    t.integer  "gaming_trip_summary_id"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+  end
 
   create_table "patrons", :force => true do |t|
     t.string   "card_number"
