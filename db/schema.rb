@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120525034728) do
+ActiveRecord::Schema.define(:version => 20120611210636) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(:version => 20120525034728) do
     t.decimal  "wl_after_tax"
     t.decimal  "buy_in"
     t.integer  "coin_in"
-    t.integer  "credit_action"
+    t.string   "credit_action"
     t.integer  "patron_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(:version => 20120525034728) do
     t.decimal  "wl_after_tax"
     t.decimal  "buy_in"
     t.integer  "coin_in"
-    t.integer  "credit_action"
+    t.string   "credit_action"
     t.integer  "gaming_trip_summary_id"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
@@ -132,6 +132,70 @@ ActiveRecord::Schema.define(:version => 20120525034728) do
     t.string   "visible_to"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "slot_trip_summaries", :force => true do |t|
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.integer  "duration"
+    t.integer  "average_bet"
+    t.integer  "coin_in"
+    t.integer  "coin_out"
+    t.integer  "jackpot"
+    t.integer  "theo_win_loss"
+    t.integer  "total_loss"
+    t.string   "credit_action"
+    t.integer  "patron_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "slot_trips", :force => true do |t|
+    t.datetime "start_at"
+    t.integer  "duration"
+    t.string   "zone_location"
+    t.string   "asset"
+    t.integer  "average_bet"
+    t.integer  "coin_in"
+    t.integer  "coin_out"
+    t.integer  "pull_rate"
+    t.integer  "theo_win_loss"
+    t.integer  "total_loss"
+    t.string   "credit_action"
+    t.integer  "slot_trip_summary_id"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  create_table "table_trip_summaries", :force => true do |t|
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.integer  "duration"
+    t.integer  "average_bet"
+    t.integer  "total_buy_in"
+    t.integer  "buy_in_cash"
+    t.integer  "buy_in_check"
+    t.integer  "buy_in_chip"
+    t.integer  "win_loss"
+    t.string   "credit_action"
+    t.integer  "patron_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "table_trips", :force => true do |t|
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.integer  "average_bet"
+    t.integer  "total_buy_in"
+    t.integer  "buy_in_cash"
+    t.integer  "buy_in_check"
+    t.integer  "buy_in_chip"
+    t.integer  "win_loss"
+    t.string   "credit_action"
+    t.integer  "table_trip_summary_id"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
   end
 
 end

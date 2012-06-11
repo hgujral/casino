@@ -4,7 +4,7 @@ namespace :db do
     require 'populator'
     require 'faker'
     
-    [Patron, Remark, GamingTripSummary, GamingTrip].each(&:delete_all)
+    [Patron, Remark, GamingTripSummary, GamingTrip, TableTripSummary, TableTrip, SlotTripSummary, SlotTrip].each(&:delete_all)
     
     Patron.populate 5 do |person|
       person.card_number = 300000..500000
@@ -81,6 +81,62 @@ namespace :db do
           trip.coin_in = 20..200
           trip.credit_action = ''
           trip.gaming_trip_summary_id = trip_summary.id
+        end
+      end
+      TableTripSummary.populate 5..10 do |trip_summary|
+        trip_summary.start_at = 11.months.ago..2.months.ago
+        trip_summary.duration = 2..5
+        trip_summary.end_at = trip_summary.start_at + trip_summary.duration.days - 1.day
+        trip_summary.average_bet = 100..1000
+        trip_summary.buy_in_cash = 30..300
+        trip_summary.buy_in_check = 30..300
+        trip_summary.buy_in_chip = 30..300
+        trip_summary.total_buy_in = trip_summary.buy_in_cash + trip_summary.buy_in_check + trip_summary.buy_in_chip        
+        trip_summary.win_loss = -500..500
+        trip_summary.credit_action = ''
+        trip_summary.patron_id = person.id
+        d = trip_summary.start_at
+        TableTrip.populate trip_summary.duration do |trip|
+          trip.start_at = d
+          d += 1.day
+          trip.end_at = trip.start_at + 3.hours
+          trip.average_bet = 100..1000
+          trip.buy_in_cash = 10..100
+          trip.buy_in_check = 10..100
+          trip.buy_in_chip = 10..100
+          trip.total_buy_in = trip.buy_in_cash + trip.buy_in_check + trip.buy_in_chip        
+          trip.win_loss = -500..500
+          trip.credit_action = ''
+          trip.table_trip_summary_id = trip_summary.id
+        end
+      end
+      SlotTripSummary.populate 5..10 do |trip_summary|
+        trip_summary.start_at = 11.months.ago..2.months.ago
+        trip_summary.duration = 2..5
+        trip_summary.end_at = trip_summary.start_at + trip_summary.duration.days - 1.day
+        trip_summary.average_bet = 100..1000
+        trip_summary.coin_in = 30..300
+        trip_summary.coin_out = 30..300
+        trip_summary.jackpot = 30000..3000000
+        trip_summary.theo_win_loss = -500..500        
+        trip_summary.total_loss = -500..500
+        trip_summary.credit_action = ''
+        trip_summary.patron_id = person.id
+        d = trip_summary.start_at
+        SlotTrip.populate trip_summary.duration do |trip|
+          trip.start_at = d
+          d += 1.day
+          trip.duration = 2..5
+          trip.zone_location = ''
+          trip.asset = ''
+          trip.average_bet = 100..1000
+          trip.coin_in = 30..300
+          trip.coin_out = 30..300
+          trip.pull_rate = 3..10
+          trip.theo_win_loss = -500..500        
+          trip.total_loss = 200..500
+          trip.credit_action = ''
+          trip.slot_trip_summary_id = trip_summary.id
         end
       end
     end

@@ -12,7 +12,7 @@ class CreateGamingTrips < ActiveRecord::Migration
       t.decimal :wl_after_tax
       t.decimal :buy_in
       t.integer :coin_in
-      t.integer :credit_action
+      t.string :credit_action
       t.integer :gaming_trip_summary_id
 
       t.timestamps
