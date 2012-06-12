@@ -162,4 +162,109 @@ class AcscController < ApplicationController
     render :soap => {:playerGamingTrip => {:gaming_trip => gaming_trip_summary.gaming_trips}}
   end
   
+  soap_action "queryPlayerTableTripSummary",
+              :args   => {
+                :card_number => :string
+              },
+              :return => {:playerTableTripSummary => 
+                {:table_trip_summary => 
+                  [{
+                    :id => :integer,
+                    :start_at => :dateTime,
+                    :end_at => :dateTime,
+                    :duration => :integer,
+                    :average_bet => :integer,
+                    :total_buy_in => :integer,
+                    :buy_in_cash => :integer,
+                    :buy_in_check => :integer,
+                    :buy_in_chip => :integer,
+                    :win_loss => :integer,
+                    :credit_action => :string
+                  }]
+                }
+              },
+	      :to => :queryPlayerTableTripSummary 
+  def queryPlayerTableTripSummary
+    patron = Patron.find_by_card_number(params[:card_number])
+    render :soap => {:playerTableTripSummary => {:table_trip_summary => patron.table_trip_summary}}
+  end
+  
+  soap_action "queryPlayerTableTrip",
+              :args   => {
+                :table_trip_summary_id => :string
+              },
+              :return => {:playerTableTrip => 
+                {:table_trip => 
+                  [{
+                    :start_at => :dateTime,
+                    :end_at => :dateTime,
+                    :average_bet => :integer,
+                    :total_buy_in => :integer,
+                    :buy_in_cash => :integer,
+                    :buy_in_check => :integer,
+                    :buy_in_chip => :integer,
+                    :win_loss => :integer,
+                    :credit_action => :string
+                  }]
+                }
+              },
+	      :to => :queryPlayerTableTrip 
+  def queryPlayerTableTrip
+    table_trip_summary = TableTripSummary.find(params[:table_trip_summary_id])
+    render :soap => {:playerTableTrip => {:table_trip => table_trip_summary.table_trips}}
+  end
+  
+  soap_action "queryPlayerSlotTripSummary",
+              :args   => {
+                :card_number => :string
+              },
+              :return => {:playerSlotTripSummary => 
+                {:slot_trip_summary => 
+                  [{
+                    :id => :integer,
+                    :start_at => :dateTime,
+                    :end_at => :dateTime,
+                    :duration => :integer,
+                    :average_bet => :integer,
+                    :coin_in => :integer,
+                    :coin_out => :integer,
+                    :jackpot => :integer,
+                    :theo_win_loss => :integer,
+                    :total_loss => :integer,
+                    :credit_action => :string
+                  }]
+                }
+              },
+	      :to => :queryPlayerSlotTripSummary 
+  def queryPlayerSlotTripSummary
+    patron = Patron.find_by_card_number(params[:card_number])
+    render :soap => {:playerSlotTripSummary => {:slot_trip_summary => patron.slot_trip_summary}}
+  end
+  
+  soap_action "queryPlayerSlotTrip",
+              :args   => {
+                :slot_trip_summary_id => :string
+              },
+              :return => {:playerSlotTrip => 
+                {:slot_trip => 
+                  [{
+                    :start_at => :dateTime,
+                    :duration => :integer,
+                    :zone_location => :string,
+                    :asset => :string,
+                    :average_bet => :integer,
+                    :coin_in => :integer,
+                    :coin_out => :integer,
+                    :pull_rate => :integer,
+                    :theo_win_loss => :integer,
+                    :total_loss => :integer,
+                    :credit_action => :string
+                  }]
+                }
+              },
+	      :to => :queryPlayerSlotTrip 
+  def queryPlayerSlotTrip
+    slot_trip_summary = SlotTripSummary.find(params[:slot_trip_summary_id])
+    render :soap => {:playerSlotTrip => {:slot_trip => slot_trip_summary.slot_trips}}
+  end
 end

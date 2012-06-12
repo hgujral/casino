@@ -1,4 +1,4 @@
-1339452206
+1339509347
 AcscController	C:/Sites/casino/app/controllers/acsc_controller.rb	class AcscController 
 AcscControllerTest	C:/Sites/casino/test/functional/acsc_controller_test.rb	class AcscControllerTest 
 AcscHelper	C:/Sites/casino/app/helpers/acsc_helper.rb	module AcscHelper
@@ -59,6 +59,10 @@ queryPlayerGamingTrip	C:/Sites/casino/app/controllers/acsc_controller.rb	  def q
 queryPlayerGamingTripSummary	C:/Sites/casino/app/controllers/acsc_controller.rb	  def queryPlayerGamingTripSummary
 queryPlayerInfo	C:/Sites/casino/app/controllers/acsc_controller.rb	  def queryPlayerInfo
 queryPlayerRemarks	C:/Sites/casino/app/controllers/acsc_controller.rb	  def queryPlayerRemarks
+queryPlayerSlotTrip	C:/Sites/casino/app/controllers/acsc_controller.rb	  def queryPlayerSlotTrip
+queryPlayerSlotTripSummary	C:/Sites/casino/app/controllers/acsc_controller.rb	  def queryPlayerSlotTripSummary
+queryPlayerTableTrip	C:/Sites/casino/app/controllers/acsc_controller.rb	  def queryPlayerTableTrip
+queryPlayerTableTripSummary	C:/Sites/casino/app/controllers/acsc_controller.rb	  def queryPlayerTableTripSummary
 test_homepage	C:/Sites/casino/test/performance/browsing_test.rb	  def test_homepage
 up	C:/Sites/casino/db/migrate/20120518014750_move_admin_notes_to_comments.rb	  def self.up
 up	C:/Sites/casino/db/migrate/20120518014749_create_admin_notes.rb	  def self.up

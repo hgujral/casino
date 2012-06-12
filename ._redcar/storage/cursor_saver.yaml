@@ -19,14 +19,6 @@ cursor_positions:
     :timestamp: 2012-06-05 10:42:02.718000 -04:00
     :selection_offset: 1136
     :block_selection_mode: false
-  - :path: db/migrate/20120611152636_create_table_trips.rb
-    :cursor_offset: 99
-    :timestamp: 2012-06-11 17:09:13.949000 -04:00
-    :selection_offset: 392
-    :block_selection_mode: false
-  - :path: db/migrate/20120611151003_create_table_trip_summaries.rb
-    :cursor_offset: 381
-    :timestamp: 2012-06-11 17:09:19.543000 -04:00
   - :path: db/migrate/20120525034728_create_gaming_trips.rb
     :cursor_offset: 415
     :timestamp: 2012-06-11 17:09:25.657000 -04:00
@@ -60,9 +52,6 @@ cursor_positions:
     :timestamp: 2012-06-11 17:19:00.783000 -04:00
     :selection_offset: 326
     :block_selection_mode: false
-  - :path: db/migrate/20120611210534_create_slot_trip_summaries.rb
-    :cursor_offset: 385
-    :timestamp: 2012-06-11 17:08:37.680000 -04:00
   - :path: app/admin/patrons.rb
     :cursor_offset: 2993
     :timestamp: 2012-06-11 17:58:03.548000 -04:00
@@ -78,4 +67,15 @@ cursor_positions:
   - :path: app/controllers/acsc_controller.rb
     :cursor_offset: 4066
     :timestamp: 2012-06-05 10:42:02.755000 -04:00
+  - :path: db/migrate/20120611152636_create_table_trips.rb
+    :cursor_offset: 4
+    :timestamp: 2012-06-11 17:09:13.949000 -04:00
+  - :path: db/migrate/20120611151003_create_table_trip_summaries.rb
+    :cursor_offset: 222
+    :timestamp: 2012-06-11 17:09:19.543000 -04:00
+  - :path: db/migrate/20120611210534_create_slot_trip_summaries.rb
+    :cursor_offset: 221
+    :timestamp: 2012-06-11 17:08:37.680000 -04:00
+    :selection_offset: 355
+    :block_selection_mode: false
 files_to_retain: 0
