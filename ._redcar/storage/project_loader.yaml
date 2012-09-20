@@ -1,3 +1,7 @@
 --- 
 open_files: 
   - app/controllers/acsc_controller.rb
+  - app/admin/event_registrations.rb
+  - app/admin/patrons.rb
+  - db/migrate/20120919210230_create_event_registrations.rb
+  - lib/tasks/populate.rake

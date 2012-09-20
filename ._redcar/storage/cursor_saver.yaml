@@ -14,11 +14,6 @@ cursor_positions:
   - :path: db/migrate/20120524185354_create_remarks.rb
     :cursor_offset: 0
     :timestamp: 2012-06-05 10:42:02.978000 -04:00
-  - :path: app/admin/gaming_trip_summaries.rb
-    :cursor_offset: 42
-    :timestamp: 2012-06-05 10:42:02.718000 -04:00
-    :selection_offset: 1136
-    :block_selection_mode: false
   - :path: db/migrate/20120525034728_create_gaming_trips.rb
     :cursor_offset: 415
     :timestamp: 2012-06-11 17:09:25.657000 -04:00
@@ -36,46 +31,67 @@ cursor_positions:
   - :path: app/models/slot_trip.rb
     :cursor_offset: 54
     :timestamp: 2012-06-11 17:24:30.903000 -04:00
-  - :path: app/models/patron.rb
-    :cursor_offset: 136
-    :timestamp: 2012-06-11 17:24:13.950000 -04:00
   - :path: app/models/table_trip_summary.rb
     :cursor_offset: 95
     :timestamp: 2012-06-11 17:25:16.978000 -04:00
     :selection_offset: 44
     :block_selection_mode: false
-  - :path: lib/tasks/populate.rake
-    :cursor_offset: 5745
-    :timestamp: 2012-06-11 17:59:19.923000 -04:00
-  - :path: db/migrate/20120611210636_create_slot_trips.rb
-    :cursor_offset: 339
-    :timestamp: 2012-06-11 17:19:00.783000 -04:00
-    :selection_offset: 326
-    :block_selection_mode: false
-  - :path: app/admin/patrons.rb
-    :cursor_offset: 2993
-    :timestamp: 2012-06-11 17:58:03.548000 -04:00
-  - :path: app/admin/table_trip_summaries.rb
-    :cursor_offset: 970
-    :timestamp: 2012-06-11 15:54:49.240000 -04:00
   - :path: app/admin/slot_trip_summaries.rb
     :cursor_offset: 728
     :timestamp: 2012-06-11 17:58:20.172000 -04:00
   - :path: readme.txt
     :cursor_offset: 0
     :timestamp: 2012-06-05 10:42:03.038000 -04:00
-  - :path: app/controllers/acsc_controller.rb
-    :cursor_offset: 4066
-    :timestamp: 2012-06-05 10:42:02.755000 -04:00
   - :path: db/migrate/20120611152636_create_table_trips.rb
     :cursor_offset: 4
     :timestamp: 2012-06-11 17:09:13.949000 -04:00
   - :path: db/migrate/20120611151003_create_table_trip_summaries.rb
     :cursor_offset: 222
     :timestamp: 2012-06-11 17:09:19.543000 -04:00
-  - :path: db/migrate/20120611210534_create_slot_trip_summaries.rb
-    :cursor_offset: 221
-    :timestamp: 2012-06-11 17:08:37.680000 -04:00
-    :selection_offset: 355
+  - :path: app/controllers/application_controller.rb
+    :cursor_offset: 0
+    :timestamp: 2012-07-03 08:57:38.742000 -04:00
+  - :path: app/controllers/welcome_controller.rb
+    :cursor_offset: 0
+    :timestamp: 2012-07-03 08:57:38.758000 -04:00
+  - :path: app/admin/table_trip_summaries.rb
+    :cursor_offset: 0
+    :timestamp: 2012-07-03 08:57:38.664000 -04:00
+  - :path: app/admin/gaming_trip_summaries.rb
+    :cursor_offset: 1136
+    :timestamp: 2012-07-03 08:57:38.648000 -04:00
+    :selection_offset: 44
     :block_selection_mode: false
+  - :path: db/migrate/20120611210636_create_slot_trips.rb
+    :cursor_offset: 480
+    :timestamp: 2012-07-03 08:57:39.008000 -04:00
+  - :path: db/migrate/20120611210534_create_slot_trip_summaries.rb
+    :cursor_offset: 413
+    :timestamp: 2012-07-03 08:57:39.008000 -04:00
+    :selection_offset: 386
+    :block_selection_mode: false
+  - :path: app/models/event_registration.rb
+    :cursor_offset: 65
+    :timestamp: 2012-09-20 09:11:32.203000 -04:00
+  - :path: app/models/patron.rb
+    :cursor_offset: 181
+    :timestamp: 2012-09-20 09:11:20.984000 -04:00
+  - :path: db/seeds.rb
+    :cursor_offset: 0
+    :timestamp: 2012-07-03 08:57:39.023000 -04:00
+  - :path: app/controllers/acsc_controller.rb
+    :cursor_offset: 0
+    :timestamp: 2012-07-03 08:57:38.742000 -04:00
+  - :path: app/admin/event_registrations.rb
+    :cursor_offset: 41
+    :timestamp: 2012-09-19 17:09:53.736000 -04:00
+  - :path: app/admin/patrons.rb
+    :cursor_offset: 4032
+    :timestamp: 2012-09-20 12:55:36.685000 -04:00
+  - :path: db/migrate/20120919210230_create_event_registrations.rb
+    :cursor_offset: 524
+    :timestamp: 2012-09-19 17:14:57.199000 -04:00
+  - :path: lib/tasks/populate.rake
+    :cursor_offset: 6181
+    :timestamp: 2012-09-20 12:57:21.792000 -04:00
 files_to_retain: 0

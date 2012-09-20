@@ -139,6 +139,8 @@ namespace :db do
           trip.slot_trip_summary_id = trip_summary.id
         end
       end
+      EventRegistration.populate 5..10 do |event_registration|
+      end
     end
   end
 end

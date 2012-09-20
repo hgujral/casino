@@ -66,6 +66,16 @@ ActiveAdmin.register Patron do
         t.column("Total Loss")   {|trip_summary| trip_summary.total_loss }
       end
     end
+    panel "Event Registrations" do
+      table_for(patron.event_registrations.order("start_at desc")) do |t|
+        t.column("Name")   {|event_registration| link_to event_registration.name, admin_event_registrations_path(event_registration) }
+        t.column("Type")   {|event_registration| event_registration.type }
+        t.column("Start At") {|event_registration|  event_registration.start_at.strftime("%m-%d-%Y") }
+        t.column("End At") {|event_registration|  event_registration.end_at.strftime("%m-%d-%Y") }
+        t.column("Tickets Booked") {|event_registration|  event_registration.duration }
+        t.column("Tickets Available")   {|event_registration| event_registration.average_bet }
+      end
+    end
   end
 
   
