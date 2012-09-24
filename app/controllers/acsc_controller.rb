@@ -267,4 +267,60 @@ class AcscController < ApplicationController
     slot_trip_summary = SlotTripSummary.find(params[:slot_trip_summary_id])
     render :soap => {:playerSlotTrip => {:slot_trip => slot_trip_summary.slot_trips}}
   end
+  
+  soap_action "queryEventRegistrations",
+              :args   => {
+                :card_number => :string
+              },
+              :return => {:eventRegistrationList => 
+                {:event_registration => 
+                  [{
+                    :event_name => :string,
+                    :event_type => :string,
+                    :start_date => :dateTime,
+                    :end_date => :dateTime,
+                    :tickets_booked => :integer,
+                    :tickets_available => :integer,
+                    :pre_auth => :boolean,
+                    :played => :boolean,
+                    :status => :string,
+                    :no_show => :boolean
+                  }]
+                }
+              },
+	      :to => :queryEventRegistrations 
+  def queryEventRegistrations
+    patron = Patron.find_by_card_number(params[:card_number])
+    render :soap => {:eventRegistrationList => {:event_registration => patron.event_registrations}}
+  end
+  
+  soap_action "fetchEventRegistration",
+              :args   => {
+                :event_registration_id => :string
+              },
+              :return => {:event_registration => 
+                {
+                    :event_name => :string,
+                    :event_type => :string,
+                    :start_date => :dateTime,
+                    :end_date => :dateTime,
+                    :tickets_booked => :integer,
+                    :tickets_available => :integer,
+                    :pre_auth => :boolean,
+                    :played => :boolean,
+                    :status => :string,
+                    :no_show => :boolean,
+                    :code => :string,
+                    :block => :string,
+                    :center => :string,
+                    :authorizer => :string,
+                    :entered_by => :string
+                }
+              },
+	      :to => :fetchEventRegistration 
+  def fetchEventRegistration
+    event_registration = EventRegistration.find(params[:event_registration_id])
+    render :soap => {:event_registration => event_registration}
+  end
+  
 end

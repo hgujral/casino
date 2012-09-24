@@ -1,4 +1,4 @@
-1348160266
+1348174307
 AcscController	C:/Sites/casino/app/controllers/acsc_controller.rb	class AcscController 
 AcscControllerTest	C:/Sites/casino/test/functional/acsc_controller_test.rb	class AcscControllerTest 
 AcscHelper	C:/Sites/casino/app/helpers/acsc_helper.rb	module AcscHelper
@@ -57,8 +57,10 @@ change	C:/Sites/casino/db/migrate/20120518054708_devise_create_admin_users.rb	  
 change	C:/Sites/casino/db/migrate/20120919210230_create_event_registrations.rb	  def change
 down	C:/Sites/casino/db/migrate/20120518014750_move_admin_notes_to_comments.rb	  def self.down
 down	C:/Sites/casino/db/migrate/20120518014749_create_admin_notes.rb	  def self.down
+fetchEventRegistration	C:/Sites/casino/app/controllers/acsc_controller.rb	  def fetchEventRegistration
 fetchPlayerInfo	C:/Sites/casino/app/controllers/acsc_controller.rb	  def fetchPlayerInfo
 index	C:/Sites/casino/app/controllers/welcome_controller.rb	  def index
+queryEventRegistrations	C:/Sites/casino/app/controllers/acsc_controller.rb	  def queryEventRegistrations
 queryPlayerGamingTrip	C:/Sites/casino/app/controllers/acsc_controller.rb	  def queryPlayerGamingTrip
 queryPlayerGamingTripSummary	C:/Sites/casino/app/controllers/acsc_controller.rb	  def queryPlayerGamingTripSummary
 queryPlayerInfo	C:/Sites/casino/app/controllers/acsc_controller.rb	  def queryPlayerInfo

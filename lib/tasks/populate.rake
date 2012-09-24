@@ -7,7 +7,7 @@ namespace :db do
     [Patron, Remark, GamingTripSummary, GamingTrip, TableTripSummary, TableTrip, SlotTripSummary, SlotTrip].each(&:delete_all)
     
     Patron.populate 5 do |person|
-      person.card_number = 300000..500000
+      person.card_number = 300000000..500000000
       person.first_name = Faker::Name.first_name
       person.last_name = Faker::Name.last_name
       person.email = Faker::Internet.free_email
@@ -140,6 +140,17 @@ namespace :db do
         end
       end
       EventRegistration.populate 5..10 do |event_registration|
+        event_registration.event_name = Faker::Lorem.sentence
+        event_registration.event_type = ['Concert', 'Golf', 'Game']
+        event_registration.start_date = 2.weeks.from_now..3.months.from_now
+        event_registration.end_date = event_registration.start_date + 2.days
+        event_registration.tickets_booked = 1..4
+        event_registration.tickets_available = 50..65
+        event_registration.pre_auth = [true, false]
+        event_registration.played = [true, false]
+        event_registration.status = ['Redeemed', 'Voided', 'Issued']
+        event_registration.no_show = [true, false]
+        event_registration.patron_id = person.id
       end
     end
   end

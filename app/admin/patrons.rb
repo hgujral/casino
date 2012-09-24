@@ -67,13 +67,13 @@ ActiveAdmin.register Patron do
       end
     end
     panel "Event Registrations" do
-      table_for(patron.event_registrations.order("start_at desc")) do |t|
-        t.column("Name")   {|event_registration| link_to event_registration.name, admin_event_registrations_path(event_registration) }
-        t.column("Type")   {|event_registration| event_registration.type }
-        t.column("Start At") {|event_registration|  event_registration.start_at.strftime("%m-%d-%Y") }
-        t.column("End At") {|event_registration|  event_registration.end_at.strftime("%m-%d-%Y") }
-        t.column("Tickets Booked") {|event_registration|  event_registration.duration }
-        t.column("Tickets Available")   {|event_registration| event_registration.average_bet }
+      table_for(patron.event_registrations.order("start_date desc")) do |t|
+        t.column("Name")   {|event_registration| link_to event_registration.event_name, admin_event_registration_path(event_registration) }
+        t.column("Type")   {|event_registration| event_registration.event_type }
+        t.column("Start Date") {|event_registration|  event_registration.start_date.strftime("%m-%d-%Y") }
+        t.column("End Date") {|event_registration|  event_registration.end_date.strftime("%m-%d-%Y") }
+        t.column("Tickets Booked") {|event_registration|  event_registration.tickets_booked }
+        t.column("Tickets Available")   {|event_registration| event_registration.tickets_available }
       end
     end
   end

@@ -54,14 +54,6 @@ cursor_positions:
   - :path: app/controllers/welcome_controller.rb
     :cursor_offset: 0
     :timestamp: 2012-07-03 08:57:38.758000 -04:00
-  - :path: app/admin/table_trip_summaries.rb
-    :cursor_offset: 0
-    :timestamp: 2012-07-03 08:57:38.664000 -04:00
-  - :path: app/admin/gaming_trip_summaries.rb
-    :cursor_offset: 1136
-    :timestamp: 2012-07-03 08:57:38.648000 -04:00
-    :selection_offset: 44
-    :block_selection_mode: false
   - :path: db/migrate/20120611210636_create_slot_trips.rb
     :cursor_offset: 480
     :timestamp: 2012-07-03 08:57:39.008000 -04:00
@@ -82,16 +74,24 @@ cursor_positions:
   - :path: app/controllers/acsc_controller.rb
     :cursor_offset: 0
     :timestamp: 2012-07-03 08:57:38.742000 -04:00
-  - :path: app/admin/event_registrations.rb
-    :cursor_offset: 41
-    :timestamp: 2012-09-19 17:09:53.736000 -04:00
-  - :path: app/admin/patrons.rb
-    :cursor_offset: 4032
-    :timestamp: 2012-09-20 12:55:36.685000 -04:00
-  - :path: db/migrate/20120919210230_create_event_registrations.rb
-    :cursor_offset: 524
-    :timestamp: 2012-09-19 17:14:57.199000 -04:00
+  - :path: app/admin/table_trip_summaries.rb
+    :cursor_offset: 0
+    :timestamp: 2012-07-03 08:57:38.664000 -04:00
+  - :path: app/admin/gaming_trip_summaries.rb
+    :cursor_offset: 1136
+    :timestamp: 2012-07-03 08:57:38.648000 -04:00
+    :selection_offset: 44
+    :block_selection_mode: false
   - :path: lib/tasks/populate.rake
-    :cursor_offset: 6181
-    :timestamp: 2012-09-20 12:57:21.792000 -04:00
+    :cursor_offset: 6211
+    :timestamp: 2012-09-20 16:14:50.347000 -04:00
+  - :path: db/migrate/20120919210230_create_event_registrations.rb
+    :cursor_offset: 137
+    :timestamp: 2012-09-20 16:14:42.128000 -04:00
+  - :path: app/admin/patrons.rb
+    :cursor_offset: 3836
+    :timestamp: 2012-09-20 16:17:52.453000 -04:00
+  - :path: app/admin/event_registrations.rb
+    :cursor_offset: 413
+    :timestamp: 2012-09-20 16:21:32.042000 -04:00
 files_to_retain: 0
