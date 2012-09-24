@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  type: 
+  start_date: 2012-09-19 17:02:31
+  end_date: 2012-09-19 17:02:31
+  tickets_booked: 1
+  tickets_available: 1
+  pre_auth: false
+  played: false
+  statu: MyString
+  no_show: false
+  code: MyString
+  block: MyString
+  center: MyString
+  authorizer: MyString
+  entered_by: MyString
+
+two:
+  name: MyString
+  type: 
+  start_date: 2012-09-19 17:02:31
+  end_date: 2012-09-19 17:02:31
+  tickets_booked: 1
+  tickets_available: 1
+  pre_auth: false
+  played: false
+  statu: MyString
+  no_show: false
+  code: MyString
+  block: MyString
+  center: MyString
+  authorizer: MyString
+  entered_by: MyString
