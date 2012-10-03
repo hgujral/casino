@@ -24,7 +24,7 @@ ActiveAdmin.register Patron do
         t.column("Visible To")   {|remark| remark.visible_to }
       end
     end
-    panel "Gaming Trip Summary" do
+    panel "Gaming Visit" do
       table_for(patron.gaming_trip_summary.order("played_at desc")) do |t|
         t.column("Played") {|trip_summary| link_to trip_summary.played_at.strftime("%m-%d-%Y"), admin_gaming_trip_summary_path(trip_summary) }
         t.column("Avergae Bet")   {|trip_summary| trip_summary.average_bet }
@@ -40,7 +40,7 @@ ActiveAdmin.register Patron do
         t.column("Coin In")   {|trip_summary| trip_summary.coin_in }
       end
     end
-    panel "Table Trip Summary" do
+    panel "Table Visit" do
       table_for(patron.table_trip_summary.order("start_at desc")) do |t|
         t.column("Start Date") {|trip_summary| link_to trip_summary.start_at.strftime("%m-%d-%Y"), admin_table_trip_summary_path(trip_summary) }
         t.column("End Date") {|trip_summary| trip_summary.end_at.strftime("%m-%d-%Y") }
@@ -53,7 +53,7 @@ ActiveAdmin.register Patron do
         t.column("Win / Loss")   {|trip_summary| trip_summary.win_loss }
       end
     end
-    panel "Slot Trip Summary" do
+    panel "Slot Visit" do
       table_for(patron.slot_trip_summary.order("start_at desc")) do |t|
         t.column("Start At") {|trip_summary|  link_to trip_summary.start_at.strftime("%m-%d-%Y"), admin_slot_trip_summary_path(trip_summary) }
         t.column("End At") {|trip_summary|  trip_summary.end_at.strftime("%m-%d-%Y") }

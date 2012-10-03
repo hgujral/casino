@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120611210636) do
+ActiveRecord::Schema.define(:version => 20120919210230) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -45,6 +45,27 @@ ActiveRecord::Schema.define(:version => 20120611210636) do
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
+
+  create_table "event_registrations", :force => true do |t|
+    t.string   "event_name"
+    t.string   "event_type"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer  "tickets_booked"
+    t.integer  "tickets_available"
+    t.boolean  "pre_auth"
+    t.boolean  "played"
+    t.string   "status"
+    t.boolean  "no_show"
+    t.string   "code"
+    t.string   "block"
+    t.string   "center"
+    t.string   "authorizer"
+    t.string   "entered_by"
+    t.integer  "patron_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
 
   create_table "gaming_trip_summaries", :force => true do |t|
     t.datetime "played_at"

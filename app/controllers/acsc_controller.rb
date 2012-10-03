@@ -322,5 +322,61 @@ class AcscController < ApplicationController
     event_registration = EventRegistration.find(params[:event_registration_id])
     render :soap => {:event_registration => event_registration}
   end
+
+    soap_action "createEventRegistration",
+              :args   => {:event_registration =>
+                {
+                    :event_name => :string,
+                    :event_type => :string,
+                    :start_date => :dateTime,
+                    :end_date => :dateTime,
+                    :tickets_booked => :integer,
+                    :tickets_available => :integer,
+                    :pre_auth => :boolean,
+                    :played => :boolean,
+                    :status => :string,
+                    :no_show => :boolean,
+                    :code => :string,
+                    :block => :string,
+                    :center => :string,
+                    :authorizer => :string,
+                    :entered_by => :string
+                  }
+              },
+              :return => {
+                    :event_registration_id => :string
+              },
+	      :to => :fetchEventRegistration 
+  def createEventRegistration
+    event_registration = EventRegistration.create(params[:event_registration])
+    render :soap => {:event_registration_id => event_registration.id}
+  end
   
+    soap_action "updateEventRegistration",
+              :args   => {:event_registration =>
+                {
+                    :event_name => :string,
+                    :event_type => :string,
+                    :start_date => :dateTime,
+                    :end_date => :dateTime,
+                    :tickets_booked => :integer,
+                    :tickets_available => :integer,
+                    :pre_auth => :boolean,
+                    :played => :boolean,
+                    :status => :string,
+                    :no_show => :boolean,
+                    :code => :string,
+                    :block => :string,
+                    :center => :string,
+                    :authorizer => :string,
+                    :entered_by => :string
+                  }
+              },
+              :return => {:event_registration_id => :string
+              },
+	      :to => :fetchEventRegistration 
+  def createEventRegistration
+    event_registration = EventRegistration.update_attributes(params[:event_registration])
+    render :soap => {:event_registration_id => event_registration.id}
+  end
 end
