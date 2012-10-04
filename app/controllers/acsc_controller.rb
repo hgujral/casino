@@ -275,6 +275,7 @@ class AcscController < ApplicationController
               :return => {:eventRegistrationList => 
                 {:event_registration => 
                   [{
+                    :id => :integer,
                     :event_name => :string,
                     :event_type => :string,
                     :start_date => :dateTime,
@@ -284,7 +285,12 @@ class AcscController < ApplicationController
                     :pre_auth => :boolean,
                     :played => :boolean,
                     :status => :string,
-                    :no_show => :boolean
+                    :no_show => :boolean,
+                    :code => :string,
+                    :block => :string,
+                    :center => :string,
+                    :authorizer => :string,
+                    :entered_by => :string                    
                   }]
                 }
               },
@@ -296,10 +302,11 @@ class AcscController < ApplicationController
   
   soap_action "fetchEventRegistration",
               :args   => {
-                :event_registration_id => :string
+                :event_registration_id => :integer
               },
               :return => {:event_registration => 
                 {
+                    :id => :integer,
                     :event_name => :string,
                     :event_type => :string,
                     :start_date => :dateTime,
@@ -324,8 +331,10 @@ class AcscController < ApplicationController
   end
 
     soap_action "createEventRegistration",
-              :args   => {:event_registration =>
+              :args   => {:card_number => :string,
+                :event_registration =>
                 {
+                    :id => :integer,
                     :event_name => :string,
                     :event_type => :string,
                     :start_date => :dateTime,
@@ -344,17 +353,22 @@ class AcscController < ApplicationController
                   }
               },
               :return => {
-                    :event_registration_id => :string
+                    :event_registration_id => :integer
               },
-	      :to => :fetchEventRegistration 
+	      :to => :createEventRegistration 
   def createEventRegistration
-    event_registration = EventRegistration.create(params[:event_registration])
+    patron = Patron.find_by_card_number(params[:card_number])
+    event_registration = EventRegistration.new(params[:event_registration])
+    event_registration.patron = patron
+    event_registration.save
     render :soap => {:event_registration_id => event_registration.id}
   end
   
     soap_action "updateEventRegistration",
-              :args   => {:event_registration =>
+              :args   => {:event_regsitration_id => :integer,
+                :event_registration =>
                 {
+                    :id => :integer,
                     :event_name => :string,
                     :event_type => :string,
                     :start_date => :dateTime,
@@ -372,11 +386,12 @@ class AcscController < ApplicationController
                     :entered_by => :string
                   }
               },
-              :return => {:event_registration_id => :string
+              :return => {:event_registration_id => :integer
               },
-	      :to => :fetchEventRegistration 
-  def createEventRegistration
-    event_registration = EventRegistration.update_attributes(params[:event_registration])
+	      :to => :updateEventRegistration 
+  def updateEventRegistration
+    event_registration = EventRegistration.find(params[:event_registration_id])
+    event_registration.update_attributes(params[:event_registration])
     render :soap => {:event_registration_id => event_registration.id}
   end
 end

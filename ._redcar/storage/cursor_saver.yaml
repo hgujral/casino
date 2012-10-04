@@ -65,9 +65,6 @@ cursor_positions:
   - :path: app/models/event_registration.rb
     :cursor_offset: 65
     :timestamp: 2012-09-20 09:11:32.203000 -04:00
-  - :path: app/models/patron.rb
-    :cursor_offset: 181
-    :timestamp: 2012-09-20 09:11:20.984000 -04:00
   - :path: db/seeds.rb
     :cursor_offset: 0
     :timestamp: 2012-07-03 08:57:39.023000 -04:00
@@ -79,9 +76,6 @@ cursor_positions:
     :timestamp: 2012-07-03 08:57:38.648000 -04:00
     :selection_offset: 44
     :block_selection_mode: false
-  - :path: app/controllers/acsc_controller.rb
-    :cursor_offset: 0
-    :timestamp: 2012-09-24 16:11:47.802000 -04:00
   - :path: app/admin/event_registrations.rb
     :cursor_offset: 435
     :timestamp: 2012-09-24 16:16:15.178000 -04:00
@@ -91,7 +85,16 @@ cursor_positions:
   - :path: lib/tasks/populate.rake
     :cursor_offset: 0
     :timestamp: 2012-09-24 16:11:47.812000 -04:00
+  - :path: config/routes.rb
+    :cursor_offset: 0
+    :timestamp: 2012-09-24 16:00:33.480000 -04:00
+  - :path: app/models/patron.rb
+    :cursor_offset: 189
+    :timestamp: 2012-09-24 16:00:33.294000 -04:00
   - :path: app/admin/patrons.rb
     :cursor_offset: 2755
     :timestamp: 2012-09-24 17:13:11.771000 -04:00
+  - :path: app/controllers/acsc_controller.rb
+    :cursor_offset: 12622
+    :timestamp: 2012-10-04 13:21:40.962000 -04:00
 files_to_retain: 0
