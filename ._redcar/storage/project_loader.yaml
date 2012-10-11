@@ -1,4 +1,8 @@
 --- 
 open_files: 
-  - app/admin/patrons.rb
+  - db/migrate/20120919210230_create_event_registrations.rb
+  - app/admin/table_trip_summaries.rb
+  - lib/tasks/populate.rake
+  - Gemfile
   - app/controllers/acsc_controller.rb
+  - app/admin/patrons.rb

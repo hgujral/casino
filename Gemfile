@@ -38,6 +38,6 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 gem 'wash_out'
 gem 'activeadmin'
-gem 'populator'
+gem 'populator', git: "https://github.com/ryanb/populator.git"
 gem 'faker'
 

@@ -4,10 +4,13 @@ namespace :db do
     require 'populator'
     require 'faker'
     
-    [Patron, Remark, GamingTripSummary, GamingTrip, TableTripSummary, TableTrip, SlotTripSummary, SlotTrip].each(&:delete_all)
+    [Patron, Remark, GamingTripSummary, GamingTrip, TableTripSummary, TableTrip, SlotTripSummary, SlotTrip, EventRegistration].each(&:delete_all)
     
-    Patron.populate 5 do |person|
-      person.card_number = 300000000..500000000
+    Patron.populate 4 do |person, index|
+      person.card_number = 4851600 if index == 1
+      person.card_number = 3557887 if index == 2
+      person.card_number = 5452028 if index == 3
+      person.card_number = 2403544 if index == 4
       person.first_name = Faker::Name.first_name
       person.last_name = Faker::Name.last_name
       person.email = Faker::Internet.free_email
@@ -142,7 +145,7 @@ namespace :db do
       EventRegistration.populate 5..10 do |event_registration|
         event_registration.event_name = Faker::Lorem.sentence
         event_registration.event_type = ['Concert', 'Golf', 'Game']
-        event_registration.start_date = 2.weeks.from_now..3.months.from_now
+        event_registration.start_date = 5.months.ago..3.months.from_now
         event_registration.end_date = event_registration.start_date + 2.days
         event_registration.tickets_booked = 1..4
         event_registration.tickets_available = 50..65

@@ -1,4 +1,4 @@
-1349371842
+1349965322
 AcscController	C:/Sites/casino/app/controllers/acsc_controller.rb	class AcscController 
 AcscControllerTest	C:/Sites/casino/test/functional/acsc_controller_test.rb	class AcscControllerTest 
 AcscHelper	C:/Sites/casino/app/helpers/acsc_helper.rb	module AcscHelper
@@ -56,6 +56,9 @@ change	C:/Sites/casino/db/migrate/20120524185354_create_remarks.rb	  def change
 change	C:/Sites/casino/db/migrate/20120518055404_create_patrons.rb	  def change
 change	C:/Sites/casino/db/migrate/20120518054708_devise_create_admin_users.rb	  def change
 createEventRegistration	C:/Sites/casino/app/controllers/acsc_controller.rb	  def createEventRegistration
+createPlayerRemarks	C:/Sites/casino/app/controllers/acsc_controller.rb	  def createPlayerRemarks
+deleteEventRegistration	C:/Sites/casino/app/controllers/acsc_controller.rb	  def deleteEventRegistration
+deletePlayerRemark	C:/Sites/casino/app/controllers/acsc_controller.rb	  def deletePlayerRemark
 down	C:/Sites/casino/db/migrate/20120518014750_move_admin_notes_to_comments.rb	  def self.down
 down	C:/Sites/casino/db/migrate/20120518014749_create_admin_notes.rb	  def self.down
 fetchEventRegistration	C:/Sites/casino/app/controllers/acsc_controller.rb	  def fetchEventRegistration
@@ -74,3 +77,4 @@ test_homepage	C:/Sites/casino/test/performance/browsing_test.rb	  def test_homep
 up	C:/Sites/casino/db/migrate/20120518014750_move_admin_notes_to_comments.rb	  def self.up
 up	C:/Sites/casino/db/migrate/20120518014749_create_admin_notes.rb	  def self.up
 updateEventRegistration	C:/Sites/casino/app/controllers/acsc_controller.rb	  def updateEventRegistration
+updatePlayerRemarks	C:/Sites/casino/app/controllers/acsc_controller.rb	  def updatePlayerRemarks

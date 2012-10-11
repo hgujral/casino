@@ -14,7 +14,7 @@ ActiveAdmin.register Patron do
   
   show do
     panel "Patron" do
-      attributes_table_for patron, :first_name, :last_name, :dob
+      attributes_table_for patron, :card_number, :first_name, :last_name, :dob
     end
     panel "Remarks" do
       table_for(patron.remarks.order("expired_at desc")) do |t|

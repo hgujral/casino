@@ -91,6 +91,7 @@ class AcscController < ApplicationController
               :return => {:playerRemarksResultList => 
                 {:remark => 
                   [{
+                    :id => :integer,
                     :description => :string,
                     :expired_at => :dateTime,
                     :visible_to => :string,
@@ -102,6 +103,64 @@ class AcscController < ApplicationController
   def queryPlayerRemarks
     patron = Patron.find_by_card_number(params[:card_number])
     render :soap => {:playerRemarksResultList => {:remark => patron.remarks}}
+  end
+  
+  soap_action "createPlayerRemarks",
+              :args   => {
+                :card_number => :string,
+                :remark => 
+                  {
+                    :id => :integer,
+                    :description => :string,
+                    :expired_at => :dateTime,
+                    :visible_to => :string,
+                    :agent_id => :integer
+                  }
+              },
+              :return => {
+                :player_remark_id => :integer 
+              },
+              :to => :createPlayerRemarks 
+  def createPlayerRemarks
+    patron = Patron.find_by_card_number(params[:card_number])
+    player_remark = Remark.new(params[:remark])
+    player_remark.patron = patron
+    player_remark.save
+    render :soap => {:player_remark_id => player_remark.id}
+  end
+  
+  soap_action "updatePlayerRemarks",
+              :args   => {
+                :player_remark_id => :integer,
+                :remark => 
+                  {
+                    :id => :integer,
+                    :description => :string,
+                    :expired_at => :dateTime,
+                    :visible_to => :string,
+                    :agent_id => :integer
+                  }
+              },
+              :return => {
+                :player_remark_id => :integer 
+              },
+              :to => :updatePlayerRemarks 
+  def updatePlayerRemarks
+    player_remark = Remark.find(params[:player_remark_id])
+    player_remark.update_attributes(params[:remark])
+    render :soap => {:player_remark_id => player_remark.id}
+  end
+  
+  soap_action "deletePlayerRemark",
+            :args   => {
+              :player_remark_id => :integer
+            },
+            :return => {:player_remark_id => :integer
+            },
+            :to => :deletePlayerRemark 
+  def deletePlayerRemark
+    Remark.find(params[:player_remark_id]).destroy
+    render :soap => {:player_remark_id => params[:player_remark_id]}
   end
   
   soap_action "queryPlayerGamingTripSummary",
@@ -365,7 +424,8 @@ class AcscController < ApplicationController
   end
   
     soap_action "updateEventRegistration",
-              :args   => {:event_regsitration_id => :integer,
+              :args   => {
+                :event_registration_id => :integer,
                 :event_registration =>
                 {
                     :id => :integer,
@@ -393,5 +453,17 @@ class AcscController < ApplicationController
     event_registration = EventRegistration.find(params[:event_registration_id])
     event_registration.update_attributes(params[:event_registration])
     render :soap => {:event_registration_id => event_registration.id}
+  end
+  
+  soap_action "deleteEventRegistration",
+            :args   => {
+              :event_registration_id => :integer
+            },
+            :return => {:event_registration_id => :integer
+            },
+            :to => :deleteEventRegistration 
+  def deleteEventRegistration
+    EventRegistration.find(params[:event_registration_id]).destroy
+    render :soap => {:event_registration_id => params[:event_registration_id]}
   end
 end
