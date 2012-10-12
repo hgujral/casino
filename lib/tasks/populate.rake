@@ -46,11 +46,13 @@ namespace :db do
       person.representative = Faker::Name.name
       person.point_balance = 5000..50000
       person.agent_id = [12345, 23456, 34567]
-      Remark.populate 2..10 do |remark|
+      Remark.populate 1..2 do |remark|
         remark.patron_id = person.id
         remark.description = Faker::Lorem.sentence
         remark.expired_at = 2.months.from_now..4.months.from_now
         remark.agent_id = [12345, 23456, 34567]
+        remark.entered_by_code = [12345, 23456, 34567]
+        remark.entered_by_name = Faker::Name.name
         remark.visible_to = ['A', 'AL']
       end
       GamingTripSummary.populate 5..10 do |trip_summary|
@@ -142,7 +144,7 @@ namespace :db do
           trip.slot_trip_summary_id = trip_summary.id
         end
       end
-      EventRegistration.populate 5..10 do |event_registration|
+      EventRegistration.populate 1..2 do |event_registration|
         event_registration.event_name = Faker::Lorem.sentence
         event_registration.event_type = ['Concert', 'Golf', 'Game']
         event_registration.start_date = 5.months.ago..3.months.from_now

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120919210230) do
+ActiveRecord::Schema.define(:version => 20121011180029) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -151,8 +151,10 @@ ActiveRecord::Schema.define(:version => 20120919210230) do
     t.integer  "agent_id"
     t.integer  "patron_id"
     t.string   "visible_to"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "entered_by_code"
+    t.string   "entered_by_name"
   end
 
   create_table "slot_trip_summaries", :force => true do |t|

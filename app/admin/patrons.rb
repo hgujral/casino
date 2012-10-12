@@ -20,7 +20,9 @@ ActiveAdmin.register Patron do
       table_for(patron.remarks.order("expired_at desc")) do |t|
         t.column("Description") {|remark| remark.description }
         t.column("Expires")   {|remark| remark.expired_at.strftime("%m-%d-%Y") }
-        t.column("Agent ID")   {|remark| remark.agent_id }
+        t.column("Entered Date")   {|remark| remark.created_at.strftime("%m-%d-%Y") }
+        t.column("Entered By Code")   {|remark| remark.entered_by_code }
+        t.column("Entered By Name")   {|remark| remark.entered_by_name }
         t.column("Visible To")   {|remark| remark.visible_to }
       end
     end

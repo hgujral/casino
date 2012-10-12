@@ -1,8 +1,9 @@
-1349965322
+1350054289
 AcscController	C:/Sites/casino/app/controllers/acsc_controller.rb	class AcscController 
 AcscControllerTest	C:/Sites/casino/test/functional/acsc_controller_test.rb	class AcscControllerTest 
 AcscHelper	C:/Sites/casino/app/helpers/acsc_helper.rb	module AcscHelper
 AcscHelperTest	C:/Sites/casino/test/unit/helpers/acsc_helper_test.rb	class AcscHelperTest 
+AddAgentCodeNameToRemarks	C:/Sites/casino/db/migrate/20121011180029_add_agent_code_name_to_remarks.rb	class AddAgentCodeNameToRemarks 
 AdminUser	C:/Sites/casino/app/models/admin_user.rb	class AdminUser 
 AdminUserTest	C:/Sites/casino/test/unit/admin_user_test.rb	class AdminUserTest 
 Application	C:/Sites/casino/config/application.rb	  class Application 
@@ -55,6 +56,7 @@ change	C:/Sites/casino/db/migrate/20120525034415_create_gaming_trip_summaries.rb
 change	C:/Sites/casino/db/migrate/20120524185354_create_remarks.rb	  def change
 change	C:/Sites/casino/db/migrate/20120518055404_create_patrons.rb	  def change
 change	C:/Sites/casino/db/migrate/20120518054708_devise_create_admin_users.rb	  def change
+change	C:/Sites/casino/db/migrate/20121011180029_add_agent_code_name_to_remarks.rb	  def change
 createEventRegistration	C:/Sites/casino/app/controllers/acsc_controller.rb	  def createEventRegistration
 createPlayerRemarks	C:/Sites/casino/app/controllers/acsc_controller.rb	  def createPlayerRemarks
 deleteEventRegistration	C:/Sites/casino/app/controllers/acsc_controller.rb	  def deleteEventRegistration
@@ -63,6 +65,7 @@ down	C:/Sites/casino/db/migrate/20120518014750_move_admin_notes_to_comments.rb	 
 down	C:/Sites/casino/db/migrate/20120518014749_create_admin_notes.rb	  def self.down
 fetchEventRegistration	C:/Sites/casino/app/controllers/acsc_controller.rb	  def fetchEventRegistration
 fetchPlayerInfo	C:/Sites/casino/app/controllers/acsc_controller.rb	  def fetchPlayerInfo
+fetchPlayerRemark	C:/Sites/casino/app/controllers/acsc_controller.rb	  def fetchPlayerRemark
 index	C:/Sites/casino/app/controllers/welcome_controller.rb	  def index
 queryEventRegistrations	C:/Sites/casino/app/controllers/acsc_controller.rb	  def queryEventRegistrations
 queryPlayerGamingTrip	C:/Sites/casino/app/controllers/acsc_controller.rb	  def queryPlayerGamingTrip

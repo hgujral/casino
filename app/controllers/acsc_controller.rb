@@ -93,9 +93,11 @@ class AcscController < ApplicationController
                   [{
                     :id => :integer,
                     :description => :string,
+                    :created_at => :dateTime,
                     :expired_at => :dateTime,
-                    :visible_to => :string,
-                    :agent_id => :integer
+                    :entered_by_code => :string,
+                    :entered_by_name => :string,
+                    :visible_to => :string
                   }]
                 }
               },
@@ -105,6 +107,28 @@ class AcscController < ApplicationController
     render :soap => {:playerRemarksResultList => {:remark => patron.remarks}}
   end
   
+  soap_action "fetchPlayerRemark",
+              :args   => {
+                :player_remark_id => :integer
+              },
+              :return => 
+                {:remark => 
+                  {
+                    :id => :integer,
+                    :description => :string,
+                    :created_at => :dateTime,
+                    :expired_at => :dateTime,
+                    :entered_by_code => :string,
+                    :entered_by_name => :string,
+                    :visible_to => :string
+                  }
+                },
+	      :to => :fetchPlayerRemark 
+  def fetchPlayerRemark
+    remark = Remark.find(params[:player_remark_id])
+    render :soap => {:remark => remark}
+  end
+  
   soap_action "createPlayerRemarks",
               :args   => {
                 :card_number => :string,
@@ -112,9 +136,11 @@ class AcscController < ApplicationController
                   {
                     :id => :integer,
                     :description => :string,
+                    :created_at => :dateTime,
                     :expired_at => :dateTime,
-                    :visible_to => :string,
-                    :agent_id => :integer
+                    :entered_by_code => :string,
+                    :entered_by_name => :string,
+                    :visible_to => :string
                   }
               },
               :return => {
@@ -136,9 +162,11 @@ class AcscController < ApplicationController
                   {
                     :id => :integer,
                     :description => :string,
+                    :created_at => :dateTime,
                     :expired_at => :dateTime,
-                    :visible_to => :string,
-                    :agent_id => :integer
+                    :entered_by_code => :string,
+                    :entered_by_name => :string,
+                    :visible_to => :string
                   }
               },
               :return => {
