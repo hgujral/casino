@@ -51,6 +51,7 @@ namespace :db do
         remark.description = Faker::Lorem.sentence
         remark.expired_at = 2.months.from_now..4.months.from_now
         remark.agent_id = [12345, 23456, 34567]
+        remark.entered_at = Time.now
         remark.entered_by_code = [12345, 23456, 34567]
         remark.entered_by_name = Faker::Name.name
         remark.visible_to = ['A', 'AL']

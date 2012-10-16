@@ -4,5 +4,6 @@ class AddAgentCodeNameToRemarks < ActiveRecord::Migration
 
     add_column :remarks, :entered_by_name, :string
 
+    add_column :remarks, :entered_at, :datetime
   end
 end

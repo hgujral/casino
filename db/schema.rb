@@ -155,6 +155,7 @@ ActiveRecord::Schema.define(:version => 20121011180029) do
     t.datetime "updated_at",      :null => false
     t.string   "entered_by_code"
     t.string   "entered_by_name"
+    t.datetime "entered_at"
   end
 
   create_table "slot_trip_summaries", :force => true do |t|

@@ -93,7 +93,7 @@ class AcscController < ApplicationController
                   [{
                     :id => :integer,
                     :description => :string,
-                    :created_at => :dateTime,
+                    :entered_at => :dateTime,
                     :expired_at => :dateTime,
                     :entered_by_code => :string,
                     :entered_by_name => :string,
@@ -116,7 +116,7 @@ class AcscController < ApplicationController
                   {
                     :id => :integer,
                     :description => :string,
-                    :created_at => :dateTime,
+                    :entered_at => :dateTime,
                     :expired_at => :dateTime,
                     :entered_by_code => :string,
                     :entered_by_name => :string,
@@ -136,7 +136,7 @@ class AcscController < ApplicationController
                   {
                     :id => :integer,
                     :description => :string,
-                    :created_at => :dateTime,
+                    :entered_at => :dateTime,
                     :expired_at => :dateTime,
                     :entered_by_code => :string,
                     :entered_by_name => :string,
@@ -162,7 +162,7 @@ class AcscController < ApplicationController
                   {
                     :id => :integer,
                     :description => :string,
-                    :created_at => :dateTime,
+                    :entered_at => :dateTime,
                     :expired_at => :dateTime,
                     :entered_by_code => :string,
                     :entered_by_name => :string,
