@@ -33,9 +33,6 @@ cursor_positions:
     :timestamp: 2012-06-11 17:25:16.978000 -04:00
     :selection_offset: 44
     :block_selection_mode: false
-  - :path: app/admin/slot_trip_summaries.rb
-    :cursor_offset: 728
-    :timestamp: 2012-06-11 17:58:20.172000 -04:00
   - :path: readme.txt
     :cursor_offset: 0
     :timestamp: 2012-06-05 10:42:03.038000 -04:00
@@ -62,11 +59,6 @@ cursor_positions:
   - :path: db/seeds.rb
     :cursor_offset: 0
     :timestamp: 2012-07-03 08:57:39.023000 -04:00
-  - :path: app/admin/gaming_trip_summaries.rb
-    :cursor_offset: 1136
-    :timestamp: 2012-07-03 08:57:38.648000 -04:00
-    :selection_offset: 44
-    :block_selection_mode: false
   - :path: app/admin/event_registrations.rb
     :cursor_offset: 435
     :timestamp: 2012-09-24 16:16:15.178000 -04:00
@@ -103,19 +95,35 @@ cursor_positions:
   - :path: db/migrate/20121011180029_add_agent_code_name_to_remarks.rb
     :cursor_offset: 233
     :timestamp: 2012-10-12 13:54:02.013000 -04:00
-  - :path: app/controllers/acsc_controller.rb
-    :cursor_offset: 2110
-    :timestamp: 2012-10-12 13:55:33.540000 -04:00
   - :path: Gemfile
     :cursor_offset: 883
     :timestamp: 2012-10-10 11:44:38.600000 -04:00
-  - :path: db/migrate/20120919210230_create_event_registrations.rb
-    :cursor_offset: 100
-    :timestamp: 2012-09-20 16:14:42.128000 -04:00
-  - :path: app/admin/table_trip_summaries.rb
+  - :path: .gitignore
     :cursor_offset: 0
-    :timestamp: 2012-07-03 08:57:38.664000 -04:00
+    :timestamp: 2012-09-24 16:00:33.025000 -04:00
+  - :path: db/migrate/20120919210230_create_event_registrations.rb
+    :cursor_offset: 0
+    :timestamp: 2012-09-24 16:16:15.192000 -04:00
+  - :path: app/admin/table_trip_summaries.rb
+    :cursor_offset: 89
+    :timestamp: 2012-10-16 10:45:28.686000 -04:00
+  - :path: app/admin/slot_trip_summaries.rb
+    :cursor_offset: 87
+    :timestamp: 2012-10-16 10:45:40.382000 -04:00
+  - :path: app/admin/gaming_trip_summaries.rb
+    :cursor_offset: 1081
+    :timestamp: 2012-10-16 10:46:15.398000 -04:00
+    :selection_offset: 1069
+    :block_selection_mode: false
+  - :path: db/migrate/20121017170802_create_rooms.rb
+    :cursor_offset: 344
+    :timestamp: 2012-10-17 16:02:10.955000 -04:00
   - :path: lib/tasks/populate.rake
-    :cursor_offset: 2527
-    :timestamp: 2012-10-12 13:55:57.680000 -04:00
+    :cursor_offset: 1334
+    :timestamp: 2012-10-17 16:09:09.146000 -04:00
+    :selection_offset: 1356
+    :block_selection_mode: false
+  - :path: app/controllers/acsc_controller.rb
+    :cursor_offset: 16377
+    :timestamp: 2012-10-17 16:36:44.603000 -04:00
 files_to_retain: 0

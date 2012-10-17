@@ -4,7 +4,30 @@ namespace :db do
     require 'populator'
     require 'faker'
     
-    [Patron, Remark, GamingTripSummary, GamingTrip, TableTripSummary, TableTrip, SlotTripSummary, SlotTrip, EventRegistration].each(&:delete_all)
+    [Room, Patron, Remark, GamingTripSummary, GamingTrip, TableTripSummary, TableTrip, SlotTripSummary, SlotTrip, EventRegistration].each(&:delete_all)
+    
+    
+    [
+      ['DL - Floors 11 - 23', 'A2 - 2 Queen, Non-Smoking', [1100, 1101, 1102]],
+      ['DL - Floors 11 - 23', 'CK - Cove, Smoking', [1200, 1201, 1202]],
+      ['DL - Floors 11 - 23', 'C1 - Cove, Non-Smoking', [1300, 1301, 1302]],
+      ['DL - Floors 11 - 23', 'SK - Sky, Smoking', [1400, 1401, 1402]],
+      ['DL - Floors 11 - 23', 'S1 - Sky, Non-Smoking', [1500, 1501, 1502]],
+      ['LX - Floors 24 - 36', 'AK - 1 King, Smoking', [2400, 2401, 2402]],
+      ['LX - Floors 24 - 36', 'AQ - 2 Queen, Smoking', [2500, 2501, 2502]],
+      ['LX - Floors 24 - 36', 'A2 - 2 Queen, Non-Smoking', [2600, 2601, 2602]],
+      ['LX - Floors 24 - 36', 'RK - Riverview, Smoking', [2700, 2701, 2702]],
+      ['LX - Floors 24 - 36', 'R1 - Riverview, Non-Smoking', [2800, 2801, 2802]]
+    ].each do |w, t, rooms|
+      rooms.each do |n|
+        Room.create! :wing_type => w, 
+          :room_type => t, 
+          :room_number => n,
+          :occupied => false,
+          :inspected => false,
+          :next_reservation_on => Time.now + (rand * Time.now.to_i)
+      end
+    end
     
     Patron.populate 4 do |person, index|
       person.card_number = 4851600 if index == 1

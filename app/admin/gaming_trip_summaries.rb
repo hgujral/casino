@@ -2,7 +2,7 @@ ActiveAdmin.register GamingTripSummary do
   menu false
   
   show do
-    panel "Gaming Trip Summary" do
+    panel "Gaming Visit" do
       attributes_table_for gaming_trip_summary, :played_at, :average_bet
     end
     panel "Gaming Trip" do

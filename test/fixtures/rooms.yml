@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type: 
+  number: 1
+  occupied: false
+  wing: MyString
+  inspected: false
+  connected: MyString
+  depart_on: 2012-10-17
+  next_reservation_on: 2012-10-17
+
+two:
+  type: 
+  number: 1
+  occupied: false
+  wing: MyString
+  inspected: false
+  connected: MyString
+  depart_on: 2012-10-17
+  next_reservation_on: 2012-10-17

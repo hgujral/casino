@@ -1,4 +1,4 @@
-1350396558
+1350506529
 AcscController	C:/Sites/casino/app/controllers/acsc_controller.rb	class AcscController 
 AcscControllerTest	C:/Sites/casino/test/functional/acsc_controller_test.rb	class AcscControllerTest 
 AcscHelper	C:/Sites/casino/app/helpers/acsc_helper.rb	module AcscHelper
@@ -17,6 +17,7 @@ CreateGamingTripSummaries	C:/Sites/casino/db/migrate/20120525034415_create_gamin
 CreateGamingTrips	C:/Sites/casino/db/migrate/20120525034728_create_gaming_trips.rb	class CreateGamingTrips 
 CreatePatrons	C:/Sites/casino/db/migrate/20120518055404_create_patrons.rb	class CreatePatrons 
 CreateRemarks	C:/Sites/casino/db/migrate/20120524185354_create_remarks.rb	class CreateRemarks 
+CreateRooms	C:/Sites/casino/db/migrate/20121017170802_create_rooms.rb	class CreateRooms 
 CreateSlotTripSummaries	C:/Sites/casino/db/migrate/20120611210534_create_slot_trip_summaries.rb	class CreateSlotTripSummaries 
 CreateSlotTrips	C:/Sites/casino/db/migrate/20120611210636_create_slot_trips.rb	class CreateSlotTrips 
 CreateTableTripSummaries	C:/Sites/casino/db/migrate/20120611151003_create_table_trip_summaries.rb	class CreateTableTripSummaries 
@@ -33,6 +34,8 @@ Patron	C:/Sites/casino/app/models/patron.rb	class Patron
 PatronTest	C:/Sites/casino/test/unit/patron_test.rb	class PatronTest 
 Remark	C:/Sites/casino/app/models/remark.rb	class Remark 
 RemarkTest	C:/Sites/casino/test/unit/remark_test.rb	class RemarkTest 
+Room	C:/Sites/casino/app/models/room.rb	class Room 
+RoomTest	C:/Sites/casino/test/unit/room_test.rb	class RoomTest 
 SlotTrip	C:/Sites/casino/app/models/slot_trip.rb	class SlotTrip 
 SlotTripSummary	C:/Sites/casino/app/models/slot_trip_summary.rb	class SlotTripSummary 
 SlotTripSummaryTest	C:/Sites/casino/test/unit/slot_trip_summary_test.rb	class SlotTripSummaryTest 
@@ -57,6 +60,7 @@ change	C:/Sites/casino/db/migrate/20120524185354_create_remarks.rb	  def change
 change	C:/Sites/casino/db/migrate/20120518055404_create_patrons.rb	  def change
 change	C:/Sites/casino/db/migrate/20120518054708_devise_create_admin_users.rb	  def change
 change	C:/Sites/casino/db/migrate/20121011180029_add_agent_code_name_to_remarks.rb	  def change
+change	C:/Sites/casino/db/migrate/20121017170802_create_rooms.rb	  def change
 createEventRegistration	C:/Sites/casino/app/controllers/acsc_controller.rb	  def createEventRegistration
 createPlayerRemarks	C:/Sites/casino/app/controllers/acsc_controller.rb	  def createPlayerRemarks
 deleteEventRegistration	C:/Sites/casino/app/controllers/acsc_controller.rb	  def deleteEventRegistration
@@ -76,6 +80,7 @@ queryPlayerSlotTrip	C:/Sites/casino/app/controllers/acsc_controller.rb	  def que
 queryPlayerSlotTripSummary	C:/Sites/casino/app/controllers/acsc_controller.rb	  def queryPlayerSlotTripSummary
 queryPlayerTableTrip	C:/Sites/casino/app/controllers/acsc_controller.rb	  def queryPlayerTableTrip
 queryPlayerTableTripSummary	C:/Sites/casino/app/controllers/acsc_controller.rb	  def queryPlayerTableTripSummary
+queryRooms	C:/Sites/casino/app/controllers/acsc_controller.rb	  def queryRooms
 test_homepage	C:/Sites/casino/test/performance/browsing_test.rb	  def test_homepage
 up	C:/Sites/casino/db/migrate/20120518014750_move_admin_notes_to_comments.rb	  def self.up
 up	C:/Sites/casino/db/migrate/20120518014749_create_admin_notes.rb	  def self.up

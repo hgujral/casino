@@ -132,12 +132,9 @@ class AcscController < ApplicationController
   soap_action "createPlayerRemarks",
               :args   => {
                 :card_number => :string,
-                :remark => 
+                :save_remark => 
                   {
-                    :id => :integer,
                     :description => :string,
-                    :entered_at => :dateTime,
-                    :expired_at => :dateTime,
                     :entered_by_code => :string,
                     :entered_by_name => :string,
                     :visible_to => :string
@@ -149,8 +146,11 @@ class AcscController < ApplicationController
               :to => :createPlayerRemarks 
   def createPlayerRemarks
     patron = Patron.find_by_card_number(params[:card_number])
-    player_remark = Remark.new(params[:remark])
+    player_remark = Remark.new(params[:save_remark])
     player_remark.patron = patron
+    player_remark.entered_at = Time.now + (rand * Time.now.to_i)
+    player_remark.expired_at = player_remark.entered_at + 3.months
+
     player_remark.save
     render :soap => {:player_remark_id => player_remark.id}
   end
@@ -158,12 +158,9 @@ class AcscController < ApplicationController
   soap_action "updatePlayerRemarks",
               :args   => {
                 :player_remark_id => :integer,
-                :remark => 
+                :save_remark => 
                   {
-                    :id => :integer,
                     :description => :string,
-                    :entered_at => :dateTime,
-                    :expired_at => :dateTime,
                     :entered_by_code => :string,
                     :entered_by_name => :string,
                     :visible_to => :string
@@ -175,7 +172,7 @@ class AcscController < ApplicationController
               :to => :updatePlayerRemarks 
   def updatePlayerRemarks
     player_remark = Remark.find(params[:player_remark_id])
-    player_remark.update_attributes(params[:remark])
+    player_remark.update_attributes(params[:save_remark])
     render :soap => {:player_remark_id => player_remark.id}
   end
   
@@ -419,13 +416,10 @@ class AcscController < ApplicationController
 
     soap_action "createEventRegistration",
               :args   => {:card_number => :string,
-                :event_registration =>
+                :save_event_registration =>
                 {
-                    :id => :integer,
                     :event_name => :string,
                     :event_type => :string,
-                    :start_date => :dateTime,
-                    :end_date => :dateTime,
                     :tickets_booked => :integer,
                     :tickets_available => :integer,
                     :pre_auth => :boolean,
@@ -445,8 +439,10 @@ class AcscController < ApplicationController
 	      :to => :createEventRegistration 
   def createEventRegistration
     patron = Patron.find_by_card_number(params[:card_number])
-    event_registration = EventRegistration.new(params[:event_registration])
+    event_registration = EventRegistration.new(params[:save_event_registration])
     event_registration.patron = patron
+    event_registration.start_date = Time.now + (rand * Time.now.to_i)
+    event_registration.end_date = event_registration.start_date + 3.days
     event_registration.save
     render :soap => {:event_registration_id => event_registration.id}
   end
@@ -454,13 +450,10 @@ class AcscController < ApplicationController
     soap_action "updateEventRegistration",
               :args   => {
                 :event_registration_id => :integer,
-                :event_registration =>
+                :save_event_registration =>
                 {
-                    :id => :integer,
                     :event_name => :string,
                     :event_type => :string,
-                    :start_date => :dateTime,
-                    :end_date => :dateTime,
                     :tickets_booked => :integer,
                     :tickets_available => :integer,
                     :pre_auth => :boolean,
@@ -479,7 +472,7 @@ class AcscController < ApplicationController
 	      :to => :updateEventRegistration 
   def updateEventRegistration
     event_registration = EventRegistration.find(params[:event_registration_id])
-    event_registration.update_attributes(params[:event_registration])
+    event_registration.update_attributes(params[:save_event_registration])
     render :soap => {:event_registration_id => event_registration.id}
   end
   
@@ -493,5 +486,31 @@ class AcscController < ApplicationController
   def deleteEventRegistration
     EventRegistration.find(params[:event_registration_id]).destroy
     render :soap => {:event_registration_id => params[:event_registration_id]}
+  end
+  
+   soap_action "queryRooms",
+              :args   => {
+                :wing_type => :string,
+                :room_type => :string
+              },
+              :return => {:roomList => 
+                {:room => 
+                  [{
+                    :id => :integer,
+                    :wing_type => :string,
+                    :room_type => :string,
+                    :room_number => :integer,
+                    :occupied => :boolean,
+                    :inspected => :boolean,
+                    :connected => :string,
+                    :depart_on => :dateTime,
+                    :next_reservation_on => :dateTime
+                  }]
+                }
+              },
+              :to => :queryRooms 
+  def queryRooms
+    rooms = Room.where(:wing_type => params[:wing_type], :room_type => params[:room_type])
+    render :soap => {:roomList => {:room => rooms}}
   end
 end

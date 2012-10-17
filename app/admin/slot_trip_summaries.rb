@@ -2,7 +2,7 @@ ActiveAdmin.register SlotTripSummary do
   menu false
   
   show do
-    panel "Slot Trip Summary" do
+    panel "Slot Visit" do
       attributes_table_for slot_trip_summary, :start_at, :end_at
     end
     panel "Table Trip" do

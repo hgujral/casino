@@ -2,7 +2,7 @@ ActiveAdmin.register TableTripSummary do
   menu false
   
   show do
-    panel "Table Trip Summary" do
+    panel "Table Visit" do
       attributes_table_for table_trip_summary, :start_at, :end_at
     end
     panel "Table Trip" do
