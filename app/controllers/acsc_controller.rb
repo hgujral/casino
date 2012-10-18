@@ -169,25 +169,26 @@ class AcscController < ApplicationController
                   }
               },
               :return => {
-                :player_remark_id => :integer 
+                :id => :integer 
               },
               :to => :updatePlayerRemarks 
   def updatePlayerRemarks
     player_remark = Remark.find(params[:player_remark_id])
     player_remark.update_attributes(params[:save_remark])
-    render :soap => {:player_remark_id => player_remark.id}
+    render :soap => {:id => player_remark.id}
   end
   
   soap_action "deletePlayerRemark",
             :args   => {
               :player_remark_id => :integer
             },
-            :return => {:player_remark_id => :integer
+            :return => {
+              :id => :integer
             },
             :to => :deletePlayerRemark 
   def deletePlayerRemark
     Remark.find(params[:player_remark_id]).destroy
-    render :soap => {:player_remark_id => params[:player_remark_id]}
+    render :soap => {:id => params[:player_remark_id]}
   end
   
   soap_action "queryPlayerGamingTripSummary",
@@ -471,25 +472,27 @@ class AcscController < ApplicationController
                     :entered_by => :string
                   }
               },
-              :return => {:event_registration_id => :integer
+              :return => {
+                :id => :integer
               },
 	      :to => :updateEventRegistration 
   def updateEventRegistration
     event_registration = EventRegistration.find(params[:event_registration_id])
     event_registration.update_attributes(params[:save_event_registration])
-    render :soap => {:event_registration_id => event_registration.id}
+    render :soap => {:id => event_registration.id}
   end
   
   soap_action "deleteEventRegistration",
             :args   => {
               :event_registration_id => :integer
             },
-            :return => {:event_registration_id => :integer
+            :return => {
+              :id => :integer
             },
             :to => :deleteEventRegistration 
   def deleteEventRegistration
     EventRegistration.find(params[:event_registration_id]).destroy
-    render :soap => {:event_registration_id => params[:event_registration_id]}
+    render :soap => {:id => params[:event_registration_id]}
   end
   
    soap_action "queryRooms",
