@@ -124,6 +124,6 @@ cursor_positions:
     :selection_offset: 1356
     :block_selection_mode: false
   - :path: app/controllers/acsc_controller.rb
-    :cursor_offset: 16377
-    :timestamp: 2012-10-17 16:36:44.603000 -04:00
+    :cursor_offset: 17001
+    :timestamp: 2012-10-18 14:21:13.259000 -04:00
 files_to_retain: 0

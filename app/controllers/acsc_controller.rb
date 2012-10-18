@@ -134,6 +134,7 @@ class AcscController < ApplicationController
                 :card_number => :string,
                 :save_remark => 
                   {
+                    :id => :integer,
                     :description => :string,
                     :entered_by_code => :string,
                     :entered_by_name => :string,
@@ -160,6 +161,7 @@ class AcscController < ApplicationController
                 :player_remark_id => :integer,
                 :save_remark => 
                   {
+                    :id => :integer,
                     :description => :string,
                     :entered_by_code => :string,
                     :entered_by_name => :string,
@@ -418,6 +420,7 @@ class AcscController < ApplicationController
               :args   => {:card_number => :string,
                 :save_event_registration =>
                 {
+                    :id => :integer,
                     :event_name => :string,
                     :event_type => :string,
                     :tickets_booked => :integer,
@@ -452,6 +455,7 @@ class AcscController < ApplicationController
                 :event_registration_id => :integer,
                 :save_event_registration =>
                 {
+                    :id => :integer,
                     :event_name => :string,
                     :event_type => :string,
                     :tickets_booked => :integer,
