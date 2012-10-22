@@ -101,9 +101,6 @@ cursor_positions:
   - :path: .gitignore
     :cursor_offset: 0
     :timestamp: 2012-09-24 16:00:33.025000 -04:00
-  - :path: db/migrate/20120919210230_create_event_registrations.rb
-    :cursor_offset: 0
-    :timestamp: 2012-09-24 16:16:15.192000 -04:00
   - :path: app/admin/table_trip_summaries.rb
     :cursor_offset: 89
     :timestamp: 2012-10-16 10:45:28.686000 -04:00
@@ -119,11 +116,12 @@ cursor_positions:
     :cursor_offset: 344
     :timestamp: 2012-10-17 16:02:10.955000 -04:00
   - :path: lib/tasks/populate.rake
-    :cursor_offset: 1334
+    :cursor_offset: 1832
     :timestamp: 2012-10-17 16:09:09.146000 -04:00
-    :selection_offset: 1356
-    :block_selection_mode: false
   - :path: app/controllers/acsc_controller.rb
-    :cursor_offset: 18283
-    :timestamp: 2012-10-18 17:19:03.981000 -04:00
+    :cursor_offset: 18905
+    :timestamp: 2012-10-22 15:55:40.398000 -04:00
+  - :path: db/migrate/20120919210230_create_event_registrations.rb
+    :cursor_offset: 0
+    :timestamp: 2012-09-24 16:16:15.192000 -04:00
 files_to_retain: 0
