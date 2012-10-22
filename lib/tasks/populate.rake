@@ -25,6 +25,7 @@ namespace :db do
           :room_number => n,
           :occupied => false,
           :inspected => false,
+          :depart_on =>  Time.now,
           :next_reservation_on => Time.now + (rand * Time.now.to_i)
       end
     end

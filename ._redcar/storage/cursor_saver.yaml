@@ -86,15 +86,9 @@ cursor_positions:
   - :path: app/models/patron.rb
     :cursor_offset: 0
     :timestamp: 2012-09-20 09:11:20.984000 -04:00
-  - :path: db/migrate/20120524185354_create_remarks.rb
-    :cursor_offset: 0
-    :timestamp: 2012-07-03 08:57:38.992000 -04:00
   - :path: db/migrate/20120611151003_create_table_trip_summaries.rb
     :cursor_offset: 0
     :timestamp: 2012-07-03 08:57:38.992000 -04:00
-  - :path: db/migrate/20121011180029_add_agent_code_name_to_remarks.rb
-    :cursor_offset: 233
-    :timestamp: 2012-10-12 13:54:02.013000 -04:00
   - :path: Gemfile
     :cursor_offset: 883
     :timestamp: 2012-10-10 11:44:38.600000 -04:00
@@ -112,17 +106,25 @@ cursor_positions:
     :timestamp: 2012-10-16 10:46:15.398000 -04:00
     :selection_offset: 1069
     :block_selection_mode: false
+  - :path: db/migrate/20120524185354_create_remarks.rb
+    :cursor_offset: 0
+    :timestamp: 2012-09-24 16:00:33.530000 -04:00
+  - :path: db/migrate/20121011180029_add_agent_code_name_to_remarks.rb
+    :cursor_offset: 0
+    :timestamp: 2012-10-16 10:11:27.910000 -04:00
   - :path: db/migrate/20120919210230_create_event_registrations.rb
     :cursor_offset: 185
     :timestamp: 2012-09-24 16:16:15.192000 -04:00
     :selection_offset: 177
     :block_selection_mode: false
   - :path: db/migrate/20121017170802_create_rooms.rb
-    :cursor_offset: 292
+    :cursor_offset: 275
     :timestamp: 2012-10-22 17:13:00.133000 -04:00
+    :selection_offset: 266
+    :block_selection_mode: false
   - :path: lib/tasks/populate.rake
-    :cursor_offset: 1832
-    :timestamp: 2012-10-17 16:09:09.146000 -04:00
+    :cursor_offset: 1314
+    :timestamp: 2012-10-22 17:25:17.964000 -04:00
   - :path: app/controllers/acsc_controller.rb
     :cursor_offset: 18963
     :timestamp: 2012-10-22 17:13:43.118000 -04:00
