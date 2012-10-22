@@ -7,8 +7,8 @@ class CreateRooms < ActiveRecord::Migration
       t.boolean :occupied
       t.boolean :inspected
       t.string :connected
-      t.date :depart_on
-      t.date :next_reservation_on
+      t.datetime :depart_on
+      t.datetime :next_reservation_on
 
       t.timestamps
     end

@@ -510,8 +510,8 @@ class AcscController < ApplicationController
                     :occupied => :boolean,
                     :inspected => :boolean,
                     :connected => :string,
-                    :depart_on => :date,
-                    :next_reservation_on => :date
+                    :depart_on => :dateTime,
+                    :next_reservation_on => :dateTime
                   }]
                 }
               },
