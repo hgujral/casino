@@ -1,5 +1,5 @@
 --- 
 open_files: 
-  - db/migrate/20121017170802_create_rooms.rb
   - lib/tasks/populate.rake
   - app/controllers/acsc_controller.rb
+  - app/admin/patrons.rb

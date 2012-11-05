@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  reservation_at: 2012-11-05 15:59:52
+  revenue_center: MyString
+  status: MyString
+  amount: 9.99
+  comp_number: 1
+  discretionary: false
+  played: false
+  no_of_people: 1
+  reason: MyString
+  approved_by: MyString
+  meal_type: MyString
+  entered_by: MyString
+  comments: MyString
+
+two:
+  reservation_at: 2012-11-05 15:59:52
+  revenue_center: MyString
+  status: MyString
+  amount: 9.99
+  comp_number: 1
+  discretionary: false
+  played: false
+  no_of_people: 1
+  reason: MyString
+  approved_by: MyString
+  meal_type: MyString
+  entered_by: MyString
+  comments: MyString

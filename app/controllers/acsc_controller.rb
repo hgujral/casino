@@ -520,4 +520,95 @@ class AcscController < ApplicationController
     rooms = Room.where(:wing_type => params[:wing_type], :room_type => params[:room_type])
     render :soap => {:roomList => {:room => rooms}}
   end
+  
+    soap_action "queryNonGamingComps",
+              :args   => {
+                :card_number => :string
+              },
+              :return => {:nonGamingCompList => 
+                {:non_gaming_comp => 
+                  [{
+                    :id => :integer,
+                    :reservation_at => :dateTime,
+                    :revenue_center => :string,
+                    :status => :string,
+                    :amount => :integer,
+                    :comp_number => :integer,
+                    :discretionary => :boolean,
+                    :played => :boolean,
+                    :no_of_people => :integer,
+                    :reason => :string,
+                    :meal_type => :string,
+                    :approved_by => :string,
+                    :entered_by => :string,
+                    :comments => :string
+                  }]
+                }
+              },
+	      :to => :queryNonGamingComps 
+  def queryNonGamingComps
+    patron = Patron.find_by_card_number(params[:card_number])
+    render :soap => {:nonGamingCompList => {:non_gaming_comp => patron.non_gaming_comps}}
+  end
+  
+  soap_action "fetchNonGamingComp",
+              :args   => {
+                :non_gaming_comp_id => :integer
+              },
+              :return => {:non_gaming_comp => 
+                {
+                    :id => :integer,
+                    :reservation_at => :dateTime,
+                    :revenue_center => :string,
+                    :status => :string,
+                    :amount => :integer,
+                    :comp_number => :integer,
+                    :discretionary => :boolean,
+                    :played => :boolean,
+                    :no_of_people => :integer,
+                    :reason => :string,
+                    :meal_type => :string,
+                    :approved_by => :string,
+                    :entered_by => :string,
+                    :comments => :string
+                }
+              },
+	      :to => :fetchNonGamingComp 
+  def fetchNonGamingComp
+    non_gaming_comp = NonGamingComp.find(params[:non_gaming_comp_id])
+    render :soap => {:non_gaming_comp => non_gaming_comp}
+  end
+
+    soap_action "createNonGamingComp",
+              :args   => {:card_number => :string,
+                :save_non_gaming_comp =>
+                {
+                    :id => :integer,
+                    :revenue_center => :string,
+                    :status => :string,
+                    :amount => :integer,
+                    :comp_number => :integer,
+                    :discretionary => :boolean,
+                    :played => :boolean,
+                    :no_of_people => :integer,
+                    :reason => :string,
+                    :meal_type => :string,
+                    :approved_by => :string,
+                    :entered_by => :string,
+                    :comments => :string
+                  }
+              },
+              :return => {
+                    :non_gaming_comp_id => :integer
+              },
+	      :to => :createEventRegistration 
+  def createEventRegistration
+    patron = Patron.find_by_card_number(params[:card_number])
+    non_gaming_comp = NonGamingComp.new(params[:save_non_gaming_comp])
+    non_gaming_comp.patron = patron
+    non_gaming_comp.reservation_at = Time.now + (rand * Time.now.to_i)
+    non_gaming_comp.save
+    render :soap => {:non_gaming_comp_id => non_gaming_comp.id}
+  end
+  
 end

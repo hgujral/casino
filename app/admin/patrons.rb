@@ -78,6 +78,13 @@ ActiveAdmin.register Patron do
         t.column("Tickets Available")   {|event_registration| event_registration.tickets_available }
       end
     end
+    panel "Non Gaming Comps" do
+      table_for(patron.non_gaming_comps.order("reservation_at desc")) do |t|
+        t.column("Reservation At")   {|non_gaming_comp| link_to non_gaming_comp.reservation_at, admin_non_gaming_comp_path(non_gaming_comp) }
+        t.column("Revenue Center")   {|non_gaming_comp| non_gaming_comp.revenue_center }
+        t.column("Status")   {|non_gaming_comp| non_gaming_comp.status }
+      end
+    end
   end
 
   

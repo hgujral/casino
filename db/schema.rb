@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121017170802) do
+ActiveRecord::Schema.define(:version => 20121105211739) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -67,6 +67,8 @@ ActiveRecord::Schema.define(:version => 20121017170802) do
     t.datetime "updated_at",        :null => false
   end
 
+  add_index "event_registrations", ["patron_id"], :name => "index_event_registrations_on_patron_id"
+
   create_table "gaming_trip_summaries", :force => true do |t|
     t.datetime "played_at"
     t.integer  "average_bet"
@@ -86,6 +88,8 @@ ActiveRecord::Schema.define(:version => 20121017170802) do
     t.datetime "updated_at",        :null => false
   end
 
+  add_index "gaming_trip_summaries", ["patron_id"], :name => "index_gaming_trip_summaries_on_patron_id"
+
   create_table "gaming_trips", :force => true do |t|
     t.datetime "played_at"
     t.integer  "average_bet"
@@ -103,6 +107,29 @@ ActiveRecord::Schema.define(:version => 20121017170802) do
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
   end
+
+  add_index "gaming_trips", ["gaming_trip_summary_id"], :name => "index_gaming_trips_on_gaming_trip_summary_id"
+
+  create_table "non_gaming_comps", :force => true do |t|
+    t.datetime "reservation_at"
+    t.string   "revenue_center"
+    t.string   "status"
+    t.decimal  "amount"
+    t.integer  "comp_number"
+    t.boolean  "discretionary"
+    t.boolean  "played"
+    t.integer  "no_of_people"
+    t.string   "reason"
+    t.string   "meal_type"
+    t.string   "approved_by"
+    t.string   "entered_by"
+    t.string   "comments"
+    t.integer  "patron_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "non_gaming_comps", ["patron_id"], :name => "index_non_gaming_comps_on_patron_id"
 
   create_table "patrons", :force => true do |t|
     t.string   "card_number"
@@ -158,6 +185,8 @@ ActiveRecord::Schema.define(:version => 20121017170802) do
     t.datetime "entered_at"
   end
 
+  add_index "remarks", ["patron_id"], :name => "index_remarks_on_patron_id"
+
   create_table "rooms", :force => true do |t|
     t.string   "wing_type"
     t.string   "room_type"
@@ -187,6 +216,8 @@ ActiveRecord::Schema.define(:version => 20121017170802) do
     t.datetime "updated_at",    :null => false
   end
 
+  add_index "slot_trip_summaries", ["patron_id"], :name => "index_slot_trip_summaries_on_patron_id"
+
   create_table "slot_trips", :force => true do |t|
     t.datetime "start_at"
     t.integer  "duration"
@@ -204,6 +235,8 @@ ActiveRecord::Schema.define(:version => 20121017170802) do
     t.datetime "updated_at",           :null => false
   end
 
+  add_index "slot_trips", ["slot_trip_summary_id"], :name => "index_slot_trips_on_slot_trip_summary_id"
+
   create_table "table_trip_summaries", :force => true do |t|
     t.datetime "start_at"
     t.datetime "end_at"
@@ -220,6 +253,8 @@ ActiveRecord::Schema.define(:version => 20121017170802) do
     t.datetime "updated_at",    :null => false
   end
 
+  add_index "table_trip_summaries", ["patron_id"], :name => "index_table_trip_summaries_on_patron_id"
+
   create_table "table_trips", :force => true do |t|
     t.datetime "start_at"
     t.datetime "end_at"
@@ -234,5 +269,7 @@ ActiveRecord::Schema.define(:version => 20121017170802) do
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
   end
+
+  add_index "table_trips", ["table_trip_summary_id"], :name => "index_table_trips_on_table_trip_summary_id"
 
 end

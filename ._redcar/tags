@@ -1,9 +1,10 @@
-1350941118
+1352153422
 AcscController	C:/Sites/casino/app/controllers/acsc_controller.rb	class AcscController 
 AcscControllerTest	C:/Sites/casino/test/functional/acsc_controller_test.rb	class AcscControllerTest 
 AcscHelper	C:/Sites/casino/app/helpers/acsc_helper.rb	module AcscHelper
 AcscHelperTest	C:/Sites/casino/test/unit/helpers/acsc_helper_test.rb	class AcscHelperTest 
 AddAgentCodeNameToRemarks	C:/Sites/casino/db/migrate/20121011180029_add_agent_code_name_to_remarks.rb	class AddAgentCodeNameToRemarks 
+AddIndexesToAllTables	C:/Sites/casino/db/migrate/20121105211739_add_indexes_to_all_tables.rb	class AddIndexesToAllTables 
 AdminUser	C:/Sites/casino/app/models/admin_user.rb	class AdminUser 
 AdminUserTest	C:/Sites/casino/test/unit/admin_user_test.rb	class AdminUserTest 
 Application	C:/Sites/casino/config/application.rb	  class Application 
@@ -15,6 +16,7 @@ CreateAdminNotes	C:/Sites/casino/db/migrate/20120518014749_create_admin_notes.rb
 CreateEventRegistrations	C:/Sites/casino/db/migrate/20120919210230_create_event_registrations.rb	class CreateEventRegistrations 
 CreateGamingTripSummaries	C:/Sites/casino/db/migrate/20120525034415_create_gaming_trip_summaries.rb	class CreateGamingTripSummaries 
 CreateGamingTrips	C:/Sites/casino/db/migrate/20120525034728_create_gaming_trips.rb	class CreateGamingTrips 
+CreateNonGamingComps	C:/Sites/casino/db/migrate/20121105205951_create_non_gaming_comps.rb	class CreateNonGamingComps 
 CreatePatrons	C:/Sites/casino/db/migrate/20120518055404_create_patrons.rb	class CreatePatrons 
 CreateRemarks	C:/Sites/casino/db/migrate/20120524185354_create_remarks.rb	class CreateRemarks 
 CreateRooms	C:/Sites/casino/db/migrate/20121017170802_create_rooms.rb	class CreateRooms 
@@ -30,6 +32,8 @@ GamingTripSummary	C:/Sites/casino/app/models/gaming_trip_summary.rb	class Gaming
 GamingTripSummaryTest	C:/Sites/casino/test/unit/gaming_trip_summary_test.rb	class GamingTripSummaryTest 
 GamingTripTest	C:/Sites/casino/test/unit/gaming_trip_test.rb	class GamingTripTest 
 MoveAdminNotesToComments	C:/Sites/casino/db/migrate/20120518014750_move_admin_notes_to_comments.rb	class MoveAdminNotesToComments 
+NonGamingComp	C:/Sites/casino/app/models/non_gaming_comp.rb	class NonGamingComp 
+NonGamingCompTest	C:/Sites/casino/test/unit/non_gaming_comp_test.rb	class NonGamingCompTest 
 Patron	C:/Sites/casino/app/models/patron.rb	class Patron 
 PatronTest	C:/Sites/casino/test/unit/patron_test.rb	class PatronTest 
 Remark	C:/Sites/casino/app/models/remark.rb	class Remark 
@@ -61,6 +65,9 @@ change	C:/Sites/casino/db/migrate/20120518055404_create_patrons.rb	  def change
 change	C:/Sites/casino/db/migrate/20120518054708_devise_create_admin_users.rb	  def change
 change	C:/Sites/casino/db/migrate/20121011180029_add_agent_code_name_to_remarks.rb	  def change
 change	C:/Sites/casino/db/migrate/20121017170802_create_rooms.rb	  def change
+change	C:/Sites/casino/db/migrate/20121105205951_create_non_gaming_comps.rb	  def change
+change	C:/Sites/casino/db/migrate/20121105211739_add_indexes_to_all_tables.rb	  def change
+createEventRegistration	C:/Sites/casino/app/controllers/acsc_controller.rb	  def createEventRegistration
 createEventRegistration	C:/Sites/casino/app/controllers/acsc_controller.rb	  def createEventRegistration
 createPlayerRemarks	C:/Sites/casino/app/controllers/acsc_controller.rb	  def createPlayerRemarks
 deleteEventRegistration	C:/Sites/casino/app/controllers/acsc_controller.rb	  def deleteEventRegistration
@@ -68,10 +75,12 @@ deletePlayerRemark	C:/Sites/casino/app/controllers/acsc_controller.rb	  def dele
 down	C:/Sites/casino/db/migrate/20120518014750_move_admin_notes_to_comments.rb	  def self.down
 down	C:/Sites/casino/db/migrate/20120518014749_create_admin_notes.rb	  def self.down
 fetchEventRegistration	C:/Sites/casino/app/controllers/acsc_controller.rb	  def fetchEventRegistration
+fetchNonGamingComp	C:/Sites/casino/app/controllers/acsc_controller.rb	  def fetchNonGamingComp
 fetchPlayerInfo	C:/Sites/casino/app/controllers/acsc_controller.rb	  def fetchPlayerInfo
 fetchPlayerRemark	C:/Sites/casino/app/controllers/acsc_controller.rb	  def fetchPlayerRemark
 index	C:/Sites/casino/app/controllers/welcome_controller.rb	  def index
 queryEventRegistrations	C:/Sites/casino/app/controllers/acsc_controller.rb	  def queryEventRegistrations
+queryNonGamingComps	C:/Sites/casino/app/controllers/acsc_controller.rb	  def queryNonGamingComps
 queryPlayerGamingTrip	C:/Sites/casino/app/controllers/acsc_controller.rb	  def queryPlayerGamingTrip
 queryPlayerGamingTripSummary	C:/Sites/casino/app/controllers/acsc_controller.rb	  def queryPlayerGamingTripSummary
 queryPlayerInfo	C:/Sites/casino/app/controllers/acsc_controller.rb	  def queryPlayerInfo

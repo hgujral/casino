@@ -4,7 +4,7 @@ namespace :db do
     require 'populator'
     require 'faker'
     
-    [Room, Patron, Remark, GamingTripSummary, GamingTrip, TableTripSummary, TableTrip, SlotTripSummary, SlotTrip, EventRegistration].each(&:delete_all)
+    [Room, Patron, Remark, GamingTripSummary, GamingTrip, TableTripSummary, TableTrip, SlotTripSummary, SlotTrip, EventRegistration, NonGamingComp].each(&:delete_all)
     
     
     [
@@ -181,6 +181,22 @@ namespace :db do
         event_registration.status = ['Redeemed', 'Voided', 'Issued']
         event_registration.no_show = [true, false]
         event_registration.patron_id = person.id
+      end
+      NonGamingComp.populate 3..5 do |non_gaming_comp|
+        non_gaming_comp.reservation_at = 5.months.ago..2.months.ago
+        non_gaming_comp.revenue_center = Populator.words(1..5).titleize
+        non_gaming_comp.status = ['Redeemed', 'Voided', 'Issued']
+        non_gaming_comp.amount = 100..500
+        non_gaming_comp.comp_number = 21323..32455
+        non_gaming_comp.discretionary = [true, false]
+        non_gaming_comp.played = [true, false]
+        non_gaming_comp.no_of_people = 1..4
+        non_gaming_comp.reason = ''
+        non_gaming_comp.meal_type = ['Breakfast', 'Lunch', 'Dinner', 'Snack']
+        non_gaming_comp.approved_by = Faker::Name.name
+        non_gaming_comp.entered_by = Faker::Name.name
+        non_gaming_comp.comments = Populator.sentences(2..3)
+        non_gaming_comp.patron_id = person.id
       end
     end
   end
