@@ -4,7 +4,7 @@ namespace :db do
     require 'populator'
     require 'faker'
     
-    [Room, Patron, Remark, GamingTripSummary, GamingTrip, TableTripSummary, TableTrip, SlotTripSummary, SlotTrip, EventRegistration, NonGamingComp].each(&:delete_all)
+    [Room, Patron, Remark, GamingTripSummary, GamingTrip, TableTripSummary, TableTrip, SlotTripSummary, SlotTrip, EventRegistration, NonGamingComp, PointBalance].each(&:delete_all)
     
     
     [
@@ -197,6 +197,27 @@ namespace :db do
         non_gaming_comp.entered_by = Faker::Name.name
         non_gaming_comp.comments = Populator.sentences(2..3)
         non_gaming_comp.patron_id = person.id
+      end
+      PointBalance.populate 3..5 do |point_balance|
+        point_balance.corporate_id = 123232..232343
+        point_balance.balance_at = 5.months.ago..2.months.ago
+        point_balance.revenue_center = Populator.words(1..5).titleize
+        point_balance.description = Populator.words(1..5).titleize
+        point_balance.amount = 100..500
+        point_balance.balance = 100..500
+        point_balance.comp_number = 21323..32455
+        point_balance.entered_by = Faker::Name.name
+        point_balance.authorized_by = Faker::Name.name
+        point_balance.patron_id = person.id
+      end
+      TierLevel.populate 1..3 do |tier_level|
+        tier_level.start_on = 5.years.ago..3.years.ago
+        tier_level.end_on = tier_level.start_on + 2.years
+        tier_level.name = ['Player', 'Wolf', 'Sagamore']
+        tier_level.current_tier_balance = 1200..2000 if tier_level.name == 'Player'
+        tier_level.current_tier_balance = 2001..20000 if tier_level.name == 'Wolf'
+        tier_level.current_tier_balance = 20001..200000 if tier_level.name == 'Sagamore'
+        tier_level.patron_id = person.id
       end
     end
   end

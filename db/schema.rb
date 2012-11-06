@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121105211739) do
+ActiveRecord::Schema.define(:version => 20121106033128) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -172,6 +172,23 @@ ActiveRecord::Schema.define(:version => 20121105211739) do
     t.datetime "updated_at",          :null => false
   end
 
+  create_table "point_balances", :force => true do |t|
+    t.integer  "corporate_id"
+    t.datetime "balance_at"
+    t.string   "revenue_center"
+    t.string   "description"
+    t.decimal  "amount"
+    t.decimal  "balance"
+    t.integer  "comp_number"
+    t.string   "entered_by"
+    t.string   "authorized_by"
+    t.integer  "patron_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "point_balances", ["patron_id"], :name => "index_point_balances_on_patron_id"
+
   create_table "remarks", :force => true do |t|
     t.text     "description"
     t.datetime "expired_at"
@@ -271,5 +288,17 @@ ActiveRecord::Schema.define(:version => 20121105211739) do
   end
 
   add_index "table_trips", ["table_trip_summary_id"], :name => "index_table_trips_on_table_trip_summary_id"
+
+  create_table "tier_levels", :force => true do |t|
+    t.datetime "start_on"
+    t.datetime "end_on"
+    t.string   "name"
+    t.decimal  "current_tier_balance"
+    t.integer  "patron_id"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  add_index "tier_levels", ["patron_id"], :name => "index_tier_levels_on_patron_id"
 
 end

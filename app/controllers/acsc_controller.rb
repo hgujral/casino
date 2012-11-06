@@ -611,4 +611,51 @@ class AcscController < ApplicationController
     render :soap => {:non_gaming_comp_id => non_gaming_comp.id}
   end
   
+    soap_action "queryPointBalance",
+              :args   => {
+                :card_number => :string
+              },
+              :return => {:pointBalanceList => 
+                {:point_balance => 
+                  [{
+                    :id => :integer,
+                    :corporate_id => :integer,
+                    :balance_at => :dateTime,
+                    :revenue_center => :string,
+                    :description => :string,
+                    :amount => :integer,
+                    :balance => :integer,
+                    :comp_number => :integer,
+                    :entered_by => :string,
+                    :authorized_by => :string
+                  }]
+                }
+              },
+	      :to => :queryPointBalance 
+  def queryPointBalance
+    patron = Patron.find_by_card_number(params[:card_number])
+    render :soap => {:pointBalanceList => {:point_balance => patron.point_balances}}
+  end
+  
+    soap_action "queryTierLevel",
+              :args   => {
+                :card_number => :string
+              },
+              :return => {:tierLevelList => 
+                {:tier_level => 
+                  [{
+                    :id => :integer,
+                    :start_on => :dateTime,
+                    :end_on => :dateTime,
+                    :name => :string,
+                    :current_tier_balance => :integer
+                  }]
+                }
+              },
+	      :to => :queryTierLevel 
+  def queryTierLevel
+    patron = Patron.find_by_card_number(params[:card_number])
+    render :soap => {:tierLevelList => {:tier_level => patron.tier_levels}}
+  end
+  
 end

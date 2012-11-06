@@ -85,6 +85,21 @@ ActiveAdmin.register Patron do
         t.column("Status")   {|non_gaming_comp| non_gaming_comp.status }
       end
     end
+    panel "Point Balances" do
+      table_for(patron.point_balances.order("balance_at desc")) do |t|
+        t.column("Balance At")   {|point_balance| link_to point_balance.balance_at, admin_point_balance_path(point_balance) }
+        t.column("Revenue Center")   {|point_balance| point_balance.revenue_center }
+        t.column("Description")   {|point_balance| point_balance.description }
+      end
+    end
+    panel "Tier Levels" do
+      table_for(patron.tier_levels.order("start_on desc")) do |t|
+        t.column("Start On")   {|tier_level| link_to tier_level.start_on, admin_tier_level_path(tier_level) }
+        t.column("End On")   {|tier_level| tier_level.end_on }
+        t.column("Tier Level Name")   {|tier_level| tier_level.name }
+        t.column("Current Tier Balance")   {|tier_level| tier_level.current_tier_balance }
+      end
+    end
   end
 
   

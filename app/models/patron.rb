@@ -6,5 +6,7 @@ class Patron < ActiveRecord::Base
   has_many :slot_trip_summary
   has_many :event_registrations
   has_many :non_gaming_comps
+  has_many :point_balances
+  has_many :tier_levels
   
 end

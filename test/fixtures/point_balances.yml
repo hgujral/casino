@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  corporate_id: 1
+  balance_at: 2012-11-05 22:07:01
+  revenue_center: MyString
+  description: MyString
+  amount: 9.99
+  balance: 9.99
+  comp_number: 1
+  entered_by: MyString
+  authorized_by: MyString
+  patron: 
+
+two:
+  corporate_id: 1
+  balance_at: 2012-11-05 22:07:01
+  revenue_center: MyString
+  description: MyString
+  amount: 9.99
+  balance: 9.99
+  comp_number: 1
+  entered_by: MyString
+  authorized_by: MyString
+  patron: 

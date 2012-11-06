@@ -132,25 +132,50 @@ cursor_positions:
     :selection_offset: 0
     :block_selection_mode: false
   - :path: db/migrate/20121105205951_create_non_gaming_comps.rb
-    :cursor_offset: 461
+    :cursor_offset: 527
     :timestamp: 2012-11-05 16:12:25.115000 -05:00
-    :selection_offset: 108
-    :block_selection_mode: false
+  - :path: app/admin/New File
+    :cursor_offset: 0
+    :timestamp: 2012-11-05 22:08:46.631000 -05:00
   - :path: app/admin/non_gaming_comps.rb
-    :cursor_offset: 161
+    :cursor_offset: 38
     :timestamp: 2012-11-05 16:42:13.624000 -05:00
-  - :path: app/models/patron.rb
-    :cursor_offset: 210
-    :timestamp: 2012-11-05 16:43:29.884000 -05:00
-  - :path: lib/tasks/populate.rake
-    :cursor_offset: 9072
-    :timestamp: 2012-11-05 16:49:53.032000 -05:00
-    :selection_offset: 8345
+    :selection_offset: 394
     :block_selection_mode: false
+  - :path: db/migrate/20121106033128_create_tier_levels.rb
+    :cursor_offset: 291
+    :timestamp: 2012-11-05 22:32:25.155000 -05:00
+  - :path: db/migrate/20121106030701_create_point_balances.rb
+    :cursor_offset: 455
+    :timestamp: 2012-11-05 22:07:01.544000 -05:00
+    :selection_offset: 413
+    :block_selection_mode: false
+  - :path: app/models/point_balance.rb
+    :cursor_offset: 61
+    :timestamp: 2012-11-05 22:07:01.558000 -05:00
+    :selection_offset: 40
+    :block_selection_mode: false
+  - :path: app/models/patron.rb
+    :cursor_offset: 250
+    :timestamp: 2012-11-05 22:33:55.407000 -05:00
+  - :path: app/models/tier_level.rb
+    :cursor_offset: 58
+    :timestamp: 2012-11-05 22:33:21.535000 -05:00
+  - :path: app/admin/point_balances.rb
+    :cursor_offset: 39
+    :timestamp: 2012-11-05 22:16:53.356000 -05:00
+    :selection_offset: 321
+    :block_selection_mode: false
+  - :path: app/admin/tier_levels.rb
+    :cursor_offset: 216
+    :timestamp: 2012-11-05 22:50:06.395000 -05:00
   - :path: app/controllers/acsc_controller.rb
-    :cursor_offset: 22615
-    :timestamp: 2012-11-05 17:05:00.718000 -05:00
+    :cursor_offset: 24037
+    :timestamp: 2012-11-05 22:49:04.903000 -05:00
+  - :path: lib/tasks/populate.rake
+    :cursor_offset: 10227
+    :timestamp: 2012-11-05 22:45:31.620000 -05:00
   - :path: app/admin/patrons.rb
-    :cursor_offset: 4956
-    :timestamp: 2012-11-05 16:46:23.139000 -05:00
+    :cursor_offset: 5798
+    :timestamp: 2012-11-05 22:38:27.606000 -05:00
 files_to_retain: 0
