@@ -142,9 +142,6 @@ cursor_positions:
     :timestamp: 2012-11-05 16:42:13.624000 -05:00
     :selection_offset: 394
     :block_selection_mode: false
-  - :path: db/migrate/20121106033128_create_tier_levels.rb
-    :cursor_offset: 291
-    :timestamp: 2012-11-05 22:32:25.155000 -05:00
   - :path: db/migrate/20121106030701_create_point_balances.rb
     :cursor_offset: 455
     :timestamp: 2012-11-05 22:07:01.544000 -05:00
@@ -169,15 +166,16 @@ cursor_positions:
   - :path: app/admin/tier_levels.rb
     :cursor_offset: 216
     :timestamp: 2012-11-05 22:50:06.395000 -05:00
-  - :path: lib/tasks/populate.rake
-    :cursor_offset: 10227
-    :timestamp: 2012-11-05 22:45:31.620000 -05:00
   - :path: app/admin/patrons.rb
     :cursor_offset: 5798
     :timestamp: 2012-11-05 22:38:27.606000 -05:00
+  - :path: lib/tasks/populate.rake
+    :cursor_offset: 10227
+    :timestamp: 2012-11-05 22:45:31.620000 -05:00
+  - :path: db/migrate/20121106033128_create_tier_levels.rb
+    :cursor_offset: 291
+    :timestamp: 2012-11-05 22:32:25.155000 -05:00
   - :path: app/controllers/acsc_controller.rb
-    :cursor_offset: 18733
-    :timestamp: 2012-11-06 16:38:40.599000 -05:00
-    :selection_offset: 18726
-    :block_selection_mode: false
+    :cursor_offset: 23998
+    :timestamp: 2012-11-06 16:51:42.444000 -05:00
 files_to_retain: 0

@@ -648,7 +648,7 @@ class AcscController < ApplicationController
                     :start_on => :dateTime,
                     :end_on => :dateTime,
                     :name => :string,
-                    :current_tier_balance => :integer
+                    :current_tier_balance => :decimal
                   }]
                 }
               },
