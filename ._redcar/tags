@@ -1,10 +1,12 @@
-1352238702
+1352309510
 AcscController	C:/Sites/casino/app/controllers/acsc_controller.rb	class AcscController 
 AcscControllerTest	C:/Sites/casino/test/functional/acsc_controller_test.rb	class AcscControllerTest 
 AcscHelper	C:/Sites/casino/app/helpers/acsc_helper.rb	module AcscHelper
 AcscHelperTest	C:/Sites/casino/test/unit/helpers/acsc_helper_test.rb	class AcscHelperTest 
 AddAgentCodeNameToRemarks	C:/Sites/casino/db/migrate/20121011180029_add_agent_code_name_to_remarks.rb	class AddAgentCodeNameToRemarks 
 AddIndexesToAllTables	C:/Sites/casino/db/migrate/20121105211739_add_indexes_to_all_tables.rb	class AddIndexesToAllTables 
+AddPointBalanceAttributesToPatron	C:/Sites/casino/db/migrate/20121107164758_add_point_balance_attributes_to_patron.rb	class AddPointBalanceAttributesToPatron 
+AddToNonGamingComp	C:/Sites/casino/db/migrate/20121107165015_add_to_non_gaming_comp.rb	class AddToNonGamingComp 
 AdminUser	C:/Sites/casino/app/models/admin_user.rb	class AdminUser 
 AdminUserTest	C:/Sites/casino/test/unit/admin_user_test.rb	class AdminUserTest 
 Application	C:/Sites/casino/config/application.rb	  class Application 
@@ -75,6 +77,8 @@ change	C:/Sites/casino/db/migrate/20121105205951_create_non_gaming_comps.rb	  de
 change	C:/Sites/casino/db/migrate/20121105211739_add_indexes_to_all_tables.rb	  def change
 change	C:/Sites/casino/db/migrate/20121106030701_create_point_balances.rb	  def change
 change	C:/Sites/casino/db/migrate/20121106033128_create_tier_levels.rb	  def change
+change	C:/Sites/casino/db/migrate/20121107164758_add_point_balance_attributes_to_patron.rb	  def change
+change	C:/Sites/casino/db/migrate/20121107165015_add_to_non_gaming_comp.rb	  def change
 createEventRegistration	C:/Sites/casino/app/controllers/acsc_controller.rb	  def createEventRegistration
 createEventRegistration	C:/Sites/casino/app/controllers/acsc_controller.rb	  def createEventRegistration
 createPlayerRemarks	C:/Sites/casino/app/controllers/acsc_controller.rb	  def createPlayerRemarks

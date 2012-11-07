@@ -541,7 +541,8 @@ class AcscController < ApplicationController
                     :meal_type => :string,
                     :approved_by => :string,
                     :entered_by => :string,
-                    :comments => :string
+                    :comments => :string,
+                    :function => :string
                   }]
                 }
               },
@@ -570,7 +571,8 @@ class AcscController < ApplicationController
                     :meal_type => :string,
                     :approved_by => :string,
                     :entered_by => :string,
-                    :comments => :string
+                    :comments => :string,
+                    :function => :string
                 }
               },
 	      :to => :fetchNonGamingComp 
@@ -595,7 +597,8 @@ class AcscController < ApplicationController
                     :meal_type => :string,
                     :approved_by => :string,
                     :entered_by => :string,
-                    :comments => :string
+                    :comments => :string,
+                    :non_gaming_flag => :boolean
                   }
               },
               :return => {
@@ -615,7 +618,9 @@ class AcscController < ApplicationController
               :args   => {
                 :card_number => :string
               },
-              :return => {:pointBalanceList => 
+              :return => {:pre_auth_comp_cash => :decimal,
+                :available_comp_cash => :decimal,
+                :pointBalanceList => 
                 {:point_balance => 
                   [{
                     :id => :integer,

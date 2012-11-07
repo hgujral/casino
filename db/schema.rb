@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121106033128) do
+ActiveRecord::Schema.define(:version => 20121107165015) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -125,8 +125,10 @@ ActiveRecord::Schema.define(:version => 20121106033128) do
     t.string   "entered_by"
     t.string   "comments"
     t.integer  "patron_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.boolean  "non_gaming_flag"
+    t.string   "function"
   end
 
   add_index "non_gaming_comps", ["patron_id"], :name => "index_non_gaming_comps_on_patron_id"
@@ -170,6 +172,8 @@ ActiveRecord::Schema.define(:version => 20121106033128) do
     t.integer  "agent_id"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.decimal  "pre_auth_comp_cash"
+    t.decimal  "available_comp_cash"
   end
 
   create_table "point_balances", :force => true do |t|

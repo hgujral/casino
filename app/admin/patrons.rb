@@ -85,6 +85,9 @@ ActiveAdmin.register Patron do
         t.column("Status")   {|non_gaming_comp| non_gaming_comp.status }
       end
     end
+    panel "Point Balance" do
+      attributes_table_for patron, :pre_auth_comp_cash, :available_comp_cash
+    end
     panel "Point Balances" do
       table_for(patron.point_balances.order("balance_at desc")) do |t|
         t.column("Balance At")   {|point_balance| link_to point_balance.balance_at, admin_point_balance_path(point_balance) }

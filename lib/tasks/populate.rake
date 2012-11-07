@@ -197,7 +197,10 @@ namespace :db do
         non_gaming_comp.entered_by = Faker::Name.name
         non_gaming_comp.comments = Populator.sentences(2..3)
         non_gaming_comp.patron_id = person.id
+        non_gaming_comp.function = Populator.words(1..5).titleize
       end
+      person.pre_auth_comp_cash = 1200..2500
+      person.available_comp_cash = 1000..1400
       PointBalance.populate 3..5 do |point_balance|
         point_balance.corporate_id = 123232..232343
         point_balance.balance_at = 5.months.ago..2.months.ago
